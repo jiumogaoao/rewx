@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86_64,x86"
+    api-level="23"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="9335866029193"
+    token="3260003817877621473"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <build
+        timestamp="7343167906584"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="J:\rewx\android\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="8806135711539"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\javax.inject-1_1cc366042ffeac6b43b9ab42a998f8833a20e127\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f931bea2bf1228377c017415e739442b2068b5db\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.1_84b183428b95a8fdbac9168cb91fdd31af5a1700\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.fresco-imagepipeline-okhttp3-1.0.1_7f240507741ffc25cc18c8040bd84680f5c9a046\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\infer-annotations-4.0_c5238a766868382d74c6c3531d35ed7dfc479fe6\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\staticlayout-proxy-1.0_44c555c148c88e7ae0fe0bc3ef44d5579b3869c6\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-ws-3.4.1_a31d8880269c82bd903da6d4bf6cd6be21c01495\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.fresco-fresco-1.0.1_7131dda5263add73c6d3e509bdc0f3df14cd8319\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.soloader-soloader-0.1.0_4ffbc8ebda956fdb4167a325b0f1330544ccb1bd\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\jsr305-3.0.0_27c184cb84c68885146b9b0aab9b522436560497\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_7384fb776724318ac70d9656690d4b83c559e2af\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_d244a5a09ecb2c7a801842f8093de9027539396f\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.0.1_244d9f576189212df38766ec7d547b1ae615903b\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9f424b0e7ba71dc97377ae7360d8fa90726c9c95\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.0.1_a83cd81d944212fa83437f7df0103940e0234338\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3ef076261c4512337d8939d0a9b8a6d24dd444e5\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.fresco-imagepipeline-base-1.0.1_3d10800f0e63e0e08fa506a8d3cec6d7d6de30f2\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.fresco-imagepipeline-1.0.1_4902d5d1112fc314944b386dcb7823a0bf19aaeb\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.1_d8f66431ad45fcddc49303bc1f6a528ca229bbc8\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.fresco-fbcore-1.0.1_cc278d46c414eb468152a6e09cb07197474ac037\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-urlconnection-3.4.1_8fbe56b110c35942e62d9762aaeb4483ce1049ba\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.9.0_43f3ec92243c6036501bb89b704085adf5310a0f\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.fresco-drawee-1.0.1_2672d2bf9db1bc3a0553add32a8cfe1b1c259b06\classes.dex"
+            type="DEX" />
+        <artifact
+            location="J:\rewx\android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.react-react-native-0.45.1_b8a1ee0364a50bbc32e0b819a90c541f86306aab\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="9335866029193"
+        verifier="COLD_SWAP_REQUESTED" />
+
+</instant-run>
