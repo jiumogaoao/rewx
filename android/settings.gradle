@@ -1,5 +1,0 @@
-rootProject.name = 'rewx'
-
-include ':app'
-include ':react-native-vector-icons-iconfont'
-project(':react-native-vector-icons-iconfont').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons-iconfont/android')
