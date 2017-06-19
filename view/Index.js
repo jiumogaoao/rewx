@@ -13,7 +13,7 @@ class Index extends React.Component {
 		tabBarLabel: '微信'
 	}
    render() {
-      return (<Icon name="weixin" size={30} color="#900" />);
+      return (<Icon name="biaoqing" size={30} color="#900" />);
    }
 }
 

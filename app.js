@@ -18,21 +18,11 @@ import Info from './view/Info';
 import Talk from './view/Talk';
 import Zone from './view/Zone';
 
-
-
-
-const MainScreenNavigator = TabNavigator({
+const rewx = StackNavigator({
    Index: { screen: Index },
    AddressList: { screen: AddressList },
    Found:{screen:Found},
-   Mine:{screen:Mine}
-});
-MainScreenNavigator.navigationOptions = {
-   title: 'My Chats',
-};
-
-const rewx = StackNavigator({
-   Home: { screen: MainScreenNavigator },
+   Mine:{screen:Mine},
    Info: { screen: Info },
    Talk: { screen: Talk },
    Zone: { screen: Zone }
