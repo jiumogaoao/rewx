@@ -3,10 +3,7 @@
  */
 import React from 'react';
 import {
-   AppRegistry,
-   Text,
-   Button,
-   View,
+   AppRegistry
 } from 'react-native';
 import { TabNavigator } from "react-navigation";
 import { StackNavigator } from "react-navigation";
