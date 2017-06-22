@@ -13,25 +13,25 @@ class Nav extends Component {
    render() {
       return (
             <View style={{height : 100,flexDirection:'row',justifyContent : 'space-between'}}>
-               <TouchableHighlight onPress={() => this.props.navigation.navigate('Index', {})} style={{flex :1,flexDirection : 'column'}}>
+               <TouchableHighlight onPress={() => this.props.goWX()} style={{flex :1,flexDirection : 'column'}}>
                   <View style={styles.navFrame}>
                      <Icon name="qipao" style={styles.icon}/>
                      <Text style={styles.text}>微信</Text>
                   </View>
                </TouchableHighlight>
-               <TouchableHighlight onPress={() => this.props.navigation.navigate('AddressList', {})} style={{flex :1}}>
+               <TouchableHighlight onPress={() => this.props.goTXL()} style={{flex :1}}>
                   <View style={styles.navFrame}>
                      <Icon name="tongxunlu" style={styles.icon}/>
                      <Text style={styles.text}>通讯录</Text>
                   </View>
                </TouchableHighlight>
-               <TouchableHighlight onPress={() => this.props.navigation.navigate('Found', {})} style={{flex :1}}>
+               <TouchableHighlight onPress={() => this.props.goFX()} style={{flex :1}}>
                   <View style={styles.navFrame}>
                      <Icon name="faxian" style={styles.icon}/>
                      <Text style={styles.text}>发现</Text>
                   </View>
                </TouchableHighlight>
-               <TouchableHighlight onPress={() => this.props.navigation.navigate('Mine', {})} style={{flex :1}}>
+               <TouchableHighlight onPress={() => this.props.goW()} style={{flex :1}}>
                   <View style={styles.navFrame}>
                      <Icon name="wo" style={styles.icon}/>
                      <Text style={styles.text}>我</Text>

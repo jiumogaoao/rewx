@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
-   AppRegistry,
    Text,
-   Button,
    View,
+   StyleSheet,
+   TouchableHighlight
 } from 'react-native';
 
-class Found extends React.Component {
-	static navigationOptions = {
-		tabBarLabel: '发现'
-	}
+import Icon from 'react-native-vector-icons-iconfont/IconFont';
+
+class Found extends Component {
+   
    render() {
-      return (<View>
-         <Text>List of all contacts</Text>
-         <Button onPress={() => this.props.navigation.navigate('Chat', { user: 'Lucy' })} title="Chat with Lucy"  />
-      </View>);
+      return (
+            <Text>发现</Text>
+         );
    }
 }
+const styles = StyleSheet.create({
+  navFrame: {
+   flex:1,
+   flexDirection : 'column',
+   justifyContent : 'space-around'
+  },
+  icon:{
+   lineHeight:50,
+   textAlign:'center',
+   fontSize:40,
+   color:"#000"
+  },
+  text:{
+   textAlign:'center'
+  }
+});
 export default Found;

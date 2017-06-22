@@ -8,11 +8,13 @@ import {
 
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
 
-class Mine extends Component {
+class WeiXing extends Component {
    
    render() {
       return (
-            <Text>我</Text>
+            <View style={{backgroundColor:"#fff",flex : 1}}>
+              <Text>微信</Text>
+            </View>
          );
    }
 }
@@ -32,4 +34,4 @@ const styles = StyleSheet.create({
    textAlign:'center'
   }
 });
-export default Mine;
+export default WeiXing;
