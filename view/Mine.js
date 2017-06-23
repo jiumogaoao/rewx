@@ -2,34 +2,30 @@ import React, { Component } from 'react';
 import {
    Text,
    View,
-   StyleSheet,
-   TouchableHighlight
+   SectionList
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons-iconfont/IconFont';
+import Cell from '../modules/Cell';
+import ListHead from '../modules/ListHead';
+import PeopleCell from '../modules/PeopleCell';
 
 class Mine extends Component {
    
    render() {
       return (
-            <Text>我</Text>
+            <SectionList
+     renderItem={({item}) => <Cell dsc={item.dsc} deg={true}  name={item.name}/>}
+     renderSectionHeader={({section}) => <ListHead a=" "/>}
+     sections={[ // 不同section渲染相同类型的子组件
+       {data: [{name:"a", key: 'A',dsc:'aa'}], key: 'A',renderItem:({item})=><PeopleCell/>},
+     {data: [{name:"b", key: 'B',dsc:'bb'}], key: 'B'},
+     {data: [{name:"c", key: 'C',dsc:'cc'}], key: 'C'},
+     {data: [{name:"d", key: 'D',dsc:'dd'}], key: 'D'},
+     {data: [{name:"e", key: 'E',dsc:'ee'}], key: 'E'}
+   ]}
+   />
          );
    }
 }
-const styles = StyleSheet.create({
-  navFrame: {
-   flex:1,
-   flexDirection : 'column',
-   justifyContent : 'space-around'
-  },
-  icon:{
-   lineHeight:50,
-   textAlign:'center',
-   fontSize:40,
-   color:"#000"
-  },
-  text:{
-   textAlign:'center'
-  }
-});
+
 export default Mine;

@@ -9,7 +9,7 @@ import AddressList from '../view/AddressList';
 import Found from '../view/Found';
 import Mine from '../view/Mine';
 class Index extends React.Component {
-   constructor(props) {console.log(222)
+   constructor(props) {
        super(props);
        this.state = { page: 1 };
      }
@@ -22,7 +22,7 @@ class Index extends React.Component {
       let page=this.state.page
       return (
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
-            <View style={{flex : 1,backgroundColor:'red'}}>
+            <View style={{flex : 1}}>
                <Display enable={this.state.page==0} keepAlive={true} style={{flex : 1}}>
                   <WeiXing/>
                </Display>

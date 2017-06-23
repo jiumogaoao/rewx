@@ -3,35 +3,24 @@ import {
    Text,
    View,
    StyleSheet,
-   TouchableHighlight
+   TouchableHighlight,
+   FlatList
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons-iconfont/IconFont';
+import WeiXingCell from '../modules/WeiXingCell';
 
 class WeiXing extends Component {
    
    render() {
       return (
-            <View style={{backgroundColor:"#fff",flex : 1}}>
-              <Text>微信</Text>
+            <View style={{flex : 1}}>
+              <FlatList
+                data={[{key: 'a'}, {key: 'b'},{key: 'c'}, {key: 'd'},{key: 'e'}, {key: 'f'},{key: 'g'}, {key: 'h'},{key: 'i'}, {key: 'j'}]}
+                renderItem={({item}) => <WeiXingCell/>}
+              />
             </View>
          );
    }
 }
-const styles = StyleSheet.create({
-  navFrame: {
-   flex:1,
-   flexDirection : 'column',
-   justifyContent : 'space-around'
-  },
-  icon:{
-   lineHeight:50,
-   textAlign:'center',
-   fontSize:40,
-   color:"#000"
-  },
-  text:{
-   textAlign:'center'
-  }
-});
+
 export default WeiXing;
