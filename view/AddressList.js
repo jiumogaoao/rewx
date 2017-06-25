@@ -7,14 +7,14 @@ import {
    SectionList
 } from 'react-native';
 
-import Cell from '../modules/Cell';
+import AddressCell from '../modules/AddressCell';
 import ListHead from '../modules/ListHead';
 class AddressList extends Component {
    
    render() {
       return (
             <SectionList
-              renderItem={({item}) => <Cell name={item.name}/>}
+              renderItem={({item}) => <AddressCell name={item.name}/>}
               renderSectionHeader={({section}) => <ListHead a={section.key}/>}
               sections={[ // 不同section渲染相同类型的子组件
                 {data: [{name:"a", key: 'A'}], key: 'A'},

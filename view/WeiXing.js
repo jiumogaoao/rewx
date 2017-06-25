@@ -15,8 +15,8 @@ class WeiXing extends Component {
       return (
             <View style={{flex : 1}}>
               <FlatList
-                data={[{key: 'a'}, {key: 'b'},{key: 'c'}, {key: 'd'},{key: 'e'}, {key: 'f'},{key: 'g'}, {key: 'h'},{key: 'i'}, {key: 'j'}]}
-                renderItem={({item}) => <WeiXingCell/>}
+                data={[{key: 'a',name:'某人',img:"http://#",dsc:"说了一句话",time:"08:40",state:"fujinderen"}, {key: 'b',name:'某人',img:"http://#",dsc:"说了一句话",time:"08:40",state:"fujinderen"},{key: 'c',name:'某人',img:"http://#",dsc:"说了一句话",time:"08:40",state:"fujinderen"}, {key: 'd',name:'某人',img:"http://#",dsc:"说了一句话",time:"08:40",state:"fujinderen"},{key: 'e',name:'某人',img:"http://#",dsc:"dsc",time:"08:40",state:"fujinderen"}, {key: 'f',name:'某人',img:"http://#",dsc:"dsc",time:"08:40",state:"fujinderen"},{key: 'g',name:'某人',img:"http://#",dsc:"dsc",time:"08:40",state:"fujinderen"}, {key: 'h',name:'某人',img:"http://#",dsc:"dsc",time:"08:40",state:"fujinderen"},{key: 'i',name:'某人',img:"http://#",dsc:"dsc",time:"08:40",state:"fujinderen"}, {key: 'j',name:'某人',img:"http://#",dsc:"dsc",time:"08:40",state:"fujinderen"}]}
+                renderItem={({item}) => <WeiXingCell name={item.name} img={item.img} dsc={item.dsc} time={item.time} state={item.state}/>}
               />
             </View>
          );

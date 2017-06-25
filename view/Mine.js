@@ -14,14 +14,13 @@ class Mine extends Component {
    render() {
       return (
             <SectionList
-     renderItem={({item}) => <Cell dsc={item.dsc} deg={true}  name={item.name}/>}
+     renderItem={({item}) => <Cell deg={true}  name={item.name} icon={item.icon}/>}
      renderSectionHeader={({section}) => <ListHead a=" "/>}
      sections={[ // 不同section渲染相同类型的子组件
-       {data: [{name:"a", key: 'A',dsc:'aa'}], key: 'A',renderItem:({item})=><PeopleCell/>},
-     {data: [{name:"b", key: 'B',dsc:'bb'}], key: 'B'},
-     {data: [{name:"c", key: 'C',dsc:'cc'}], key: 'C'},
-     {data: [{name:"d", key: 'D',dsc:'dd'}], key: 'D'},
-     {data: [{name:"e", key: 'E',dsc:'ee'}], key: 'E'}
+       {data: [{name:"某人", key: 'A',dsc:'微信号：jiumogaoao',img:'http://#'}], key: 'A',renderItem:({item})=><PeopleCell name={item.name} dsc={item.dsc} img={item.img}/>},
+     {data: [{name:"钱包", key: 'B',dsc:'bb',icon:'qianbao'}], key: 'B'},
+     {data: [{name:"收藏", key: 'C',dsc:'cc',icon:'shoucang'},{name:"相册", key: 'CC',dsc:'cc',icon:'xiangche'},{name:"卡包", key: 'CCC',dsc:'cc',icon:'kabao'},{name:"表情", key: 'CCCC',dsc:'cc',icon:'biaoqing'}], key: 'C'},
+     {data: [{name:"设置", key: 'D',dsc:'dd',icon:'shezhi'}], key: 'D'}
    ]}
    />
          );
