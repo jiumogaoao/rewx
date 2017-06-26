@@ -13,6 +13,7 @@ class WeiXingCell extends Component {
    
    render() {
       return (
+          <TouchableHighlight onPress={() => this.props.go(this.props.id)}>
             <View style={{flexDirection:'row',height:100,borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
               <Image source={{uri: this.props.img}}
        style={{width: 80, height: 80,marginTop:10,marginLeft:10}} />
@@ -25,6 +26,7 @@ class WeiXingCell extends Component {
                 <Icon name={this.props.state} style={{textAlign:'right',marginRight:20,fontSize:15,lineHeight:15,marginTop:10}}/>
               </View>
             </View>
+          </TouchableHighlight>
          );
    }
 }

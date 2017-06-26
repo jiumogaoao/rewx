@@ -17,14 +17,14 @@ class Index extends React.Component {
      this.setState({  
        page: num 
      })  
-   }  
+   }
    render() {
       let page=this.state.page
       return (
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
             <View style={{flex : 1}}>
                <Display enable={this.state.page==0} keepAlive={true} style={{flex : 1}}>
-                  <WeiXing/>
+                  <WeiXing go={(data)=>this.props.navigation.navigate('Talk', {data: data})}/>
                </Display>
                <Display enable={this.state.page==1} keepAlive={true} style={{flex : 1}}>
                   <AddressList/>

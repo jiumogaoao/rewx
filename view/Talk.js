@@ -6,25 +6,27 @@ import {
    View,
 } from 'react-native';
 
+import TalkFoot from '../modules/TalkFoot';
+
 class Talk extends React.Component {
    static navigationOptions = ({ navigation }) => {
       const {state, setParams} = navigation;
-      const isInfo = state.params.mode === 'info';
-      const {user} = state.params;
+      const {data} = state.params;
       return {
-         title: isInfo ? `${user}'s Contact Info` : `Chat with ${state.params.user}`,
+         title: data,
          headerRight: (
             <Button
-               title={isInfo ? 'Done' : `${user}'s info`}
-               onPress={() => setParams({ mode: isInfo ? 'none' : 'info'})}
+               title={data}
+               onPress={() => setParams({ data: 'b'})}
             />
          ),
       };
    };
    render() {
       return (
-         <View>
-            <Text>Chat with Lucy</Text>
+         <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
+            <View style={{flex : 1}}></View>
+            <TalkFoot/>
          </View>
       );
    }
