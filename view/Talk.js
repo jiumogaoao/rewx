@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import TalkFoot from '../modules/TalkFoot';
-import SvgUri from 'react-native-svg-uri';
+import YouXi from '../svg/YouXi';
 
 class Talk extends React.Component {
    static navigationOptions = ({ navigation }) => {
@@ -27,11 +27,7 @@ class Talk extends React.Component {
       return (
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
             <View style={{flex : 1}}>
-                <SvgUri
-                    width="200"
-                    height="200"
-                    source={{uri:'http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg'}}
-                />
+              <YouXi w={100} h={100} s={1.2}/>
             </View>
             <TalkFoot/>
          </View>
