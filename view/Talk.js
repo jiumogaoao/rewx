@@ -7,23 +7,7 @@ import {
 } from 'react-native';
 
 import TalkFoot from '../modules/TalkFoot';
-
-import Svg,{
-    Circle,
-    Ellipse,
-    G,
-    LinearGradient,
-    RadialGradient,
-    Line,
-    Path,
-    Polygon,
-    Polyline,
-    Rect,
-    Symbol,
-    Use,
-    Defs,
-    Stop
-} from 'react-native-svg';
+import SvgUri from 'react-native-svg-uri';
 
 class Talk extends React.Component {
    static navigationOptions = ({ navigation }) => {
@@ -43,8 +27,11 @@ class Talk extends React.Component {
       return (
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
             <View style={{flex : 1}}>
-              
-
+                <SvgUri
+                    width="200"
+                    height="200"
+                    source={{uri:'http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg'}}
+                />
             </View>
             <TalkFoot/>
          </View>

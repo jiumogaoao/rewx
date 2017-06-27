@@ -40,10 +40,10 @@ class TalkFoot extends Component {
           //水平方向  
        horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
                   <View style={{width:600,height:300,flexDirection:'row',flexWrap:'wrap'}}>
-                    {this.renderScrollItem([{icon:'xiangche',name:'相册'},{icon:'paise',name:'拍摄'},{icon:'shiping',name:'视频聊天'},{icon:'weizhi',name:'位置'},{icon:'hongbao',name:'红包'},{icon:'zhuanzhang',name:'转账'},{icon:'wo2',name:'个人名片'},{icon:'yuying',name:'语音输入'}])}
+                    {this.renderScrollItem([{icon:'xiangche',name:'相册',key:'a'},{icon:'paise',name:'拍摄',key:'aa'},{icon:'shiping',name:'视频聊天',key:'aaa'},{icon:'weizhi',name:'位置',key:'aaaa'},{icon:'hongbao',name:'红包',key:'aaaaa'},{icon:'zhuanzhang',name:'转账',key:'aaaaaa'},{icon:'wo2',name:'个人名片',key:'aaaaaaa'},{icon:'yuying',name:'语音输入',key:'aaaaaaaa'}])}
                   </View>
                   <View style={{width:600,height:300,flexDirection:'row'}}>
-                    {this.renderScrollItem([{icon:'shoucang',name:'收藏'},{icon:'kaquan',name:'卡券'}])}
+                    {this.renderScrollItem([{icon:'shoucang',name:'收藏',key:'aaaaaaaaa'},{icon:'kaquan',name:'卡券',key:'aaaaaaaaaa'}])}
                   </View>
                 </ScrollView>
               </View>
