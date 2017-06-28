@@ -9,14 +9,26 @@ import {
 
 import AddressCell from '../modules/AddressCell';
 import ListHead from '../modules/ListHead';
+import Icon from 'react-native-vector-icons-iconfont/IconFont';
+const styles = StyleSheet.create({
+  icon:{
+    width:60,height:60,marginLeft:10,marginTop:10,color:'#fff',fontSize:40,lineHeight:45,textAlign:'center'
+  }
+})
 class AddressList extends Component {
    
    render() {
       return (
             <SectionList
-              renderItem={({item}) => <AddressCell name={item.name}/>}
-              renderSectionHeader={({section}) => <ListHead a={section.key}/>}
+              renderItem={({item}) => <AddressCell name={item.name} other={item.other}/>}
+              renderSectionHeader={({section}) => section.nohead?null:<ListHead a={section.key}/>}
               sections={[ // 不同section渲染相同类型的子组件
+                {data: [
+                  {name:"新的朋友", key: 'A',other:(<Icon name="xinpengyou" style={[styles.icon,{backgroundColor:'red'}]}/>)},
+                  {name:"群聊", key: 'Ab',other:(<Icon name="qunliao" style={[styles.icon,{backgroundColor:'green'}]}/>)},
+                  {name:"标签", key: 'Ac',other:(<Icon name="biaoqian" style={[styles.icon,{backgroundColor:'yellow'}]}/>)},
+                  {name:"公众号", key: 'Ae',other:(<Icon name="gongzonghao" style={[styles.icon,{backgroundColor:'blue'}]}/>)}
+                  ], key: 'A0',nohead:true},
                 {data: [{name:"a", key: 'A'}], key: 'A'},
                 {data: [{name:"b", key: 'B'}], key: 'B'},
                 {data: [{name:"c", key: 'C'}], key: 'C'},
