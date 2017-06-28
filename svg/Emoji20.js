@@ -22,7 +22,7 @@ class Emoji20 extends Component {
    
    render() {
       return (
-            <Svg t="1498613349226" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" p-id="6457" width={this.props.w} height={this.props.h}>
+            <Svg t="1498613349226" class="icon" style="" viewBox={"0 0 "+(this.props.s*1024)+" "+(this.props.s*1024)} version="1.1" p-id="6457" width={this.props.w} height={this.props.h}>
               <G scale={this.props.s}>
                     <Path d="M166.4 957.866667a341.333333 32 0 1 0 682.666667 0 341.333333 32 0 1 0-682.666667 0Z" fill="#45413C" p-id="6458"></Path>
                     <Path d="M512 460.8m-426.666667 0a426.666667 426.666667 0 1 0 853.333334 0 426.666667 426.666667 0 1 0-853.333334 0Z" fill="#FFE500" p-id="6459"></Path>

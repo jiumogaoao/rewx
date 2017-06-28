@@ -26,7 +26,6 @@ class Talk extends React.Component {
       return (
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
             <View style={{flex : 1}}>
-              <SvgPic w={100} h={100} s={1.2}/>
             </View>
             <TalkFoot/>
          </View>

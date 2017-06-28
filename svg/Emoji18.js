@@ -22,7 +22,7 @@ class Emoji18 extends Component {
    
    render() {
       return (
-            <Svg t="1498613335622" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width={this.props.w} height={this.props.h}>
+            <Svg t="1498613335622" class="icon" style="" viewBox={"0 0 "+(this.props.s*1024)+" "+(this.props.s*1024)} version="1.1" width={this.props.w} height={this.props.h}>
               <G scale={this.props.s}>
                     <Path d="M140.8 960a341.333333 32 0 1 0 682.666667 0 341.333333 32 0 1 0-682.666667 0Z" fill="#45413C" p-id="5656"></Path>
                     <Path d="M482.133333 458.666667m-426.666666 0a426.666667 426.666667 0 1 0 853.333333 0 426.666667 426.666667 0 1 0-853.333333 0Z" fill="#FFE500" p-id="5657"></Path>
