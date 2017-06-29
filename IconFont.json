@@ -1,5 +1,5 @@
 {
-  "biaoqing": 58910,
+  "biaoqing": 58898,
   "qipao": 58881,
   "tianjia": 59053,
   "biaoqian": 58900,
@@ -22,7 +22,7 @@
   "gouwu": 58981,
   "xinpengyou": 59280,
   "qunliao": 58922,
-  "qipao": 58883,
+  "qipao2": 58883,
   "fujinderen": 58902,
   "sousuo":58884,
   "xiaochengxu":58890,
@@ -41,5 +41,6 @@
   "zhuanzhang":58931,
   "yuying":58880,
   "paise":59035,
-  "shiping":58987
+  "shiping":58987,
+  "tuige":58899
 }

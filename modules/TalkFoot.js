@@ -39,6 +39,10 @@ const styles = StyleSheet.create({
   }
 })
 class TalkFoot extends Component {
+  constructor(props) {
+       super(props);
+       this.state = { state: 0 };//0:默认,1:表情,2:其他功能
+     }
    renderScrollItem(list) {
       const itemArr = [];
       for(var i = 0; i < list.length; i++) {
@@ -53,17 +57,24 @@ class TalkFoot extends Component {
    }
    render() {
       return (
-            <View style={{height : 700,flexDirection:'column',borderTopColor:'#000',borderTopWidth:1,backgroundColor:'#eee'}}>
+            <View style={{height : this.state.state==0?100:400,flexDirection:'column',borderTopColor:'#000',borderTopWidth:1,backgroundColor:'#eee'}}>
               <View style={{height:100,flexDirection:'row',justifyContent : 'space-between'}}>
-                <Icon name="yuying" style={{fontSize:40,lineHeight:40,textAlign:'center',width:50,height:50,borderColor:'#000',borderWidth:1,borderRadius:50,marginLeft:10,marginTop:25}}/>
+                <TouchableHighlight onPress={() => this.setState({state: 0 })}>
+                  <Icon name="yuying" style={{fontSize:40,lineHeight:40,textAlign:'center',width:50,height:50,borderColor:'#000',borderWidth:1,borderRadius:50,marginLeft:10,marginTop:25}}/>
+                </TouchableHighlight>
                 <TextInput
                   style={{height: 60,flex:1,backgroundColor:'#fff',marginLeft:10,marginTop:20}}
                   placeholder="Type here to translate!"
                  />
-                <Icon name="biaoqing" style={{fontSize:40,lineHeight:40,textAlign:'center',width:50,height:50,borderColor:'#000',borderWidth:1,borderRadius:50,marginLeft:10,marginTop:25}}/>
-                <Icon name="jia" style={{fontSize:40,lineHeight:37,textAlign:'center',width:50,height:50,borderColor:'#000',borderWidth:1,borderRadius:50,marginLeft:10,marginRight:10,marginTop:25}}/>
+                <TouchableHighlight onPress={() => this.setState({state: 1 })}>
+                  <Icon name="biaoqing" style={{fontSize:40,lineHeight:40,textAlign:'center',width:50,height:50,borderColor:'#000',borderWidth:1,borderRadius:50,marginLeft:10,marginTop:25}}/>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => this.setState({state: 2 })}>
+                  <Icon name="jia" style={{fontSize:40,lineHeight:37,textAlign:'center',width:50,height:50,borderColor:'#000',borderWidth:1,borderRadius:50,marginLeft:10,marginRight:10,marginTop:25}}/>
+                </TouchableHighlight>
               </View>
-              <View style={{flex:1,flexDirection:'column'}}>
+              {this.state.state==2?(
+                <View style={{flex:1,flexDirection:'column'}}>
                 <ScrollView
           //水平方向  
        horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
@@ -75,42 +86,46 @@ class TalkFoot extends Component {
                   </View>
                 </ScrollView>
               </View>
-              <View style={{flex:1,flexDirection:'column'}}>
-                <ScrollView
-          //水平方向  
-       horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
-                  <View style={{width:600,height:300,flexDirection:'row',flexWrap:'wrap'}}>
-                    <View style={styles.svg}>
-                      <Emoji0 w={40} h={40} s={2}/>
+                ):null}
+              {this.state.state==1?(
+  <View style={{flex:1,flexDirection:'column'}}>
+                  <ScrollView
+            //水平方向  
+         horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
+                    <View style={{width:600,height:300,flexDirection:'row',flexWrap:'wrap'}}>
+                      <View style={styles.svg}>
+                        <Emoji0 w={40} h={40} s={2}/>
+                      </View>
+                      
+                      <View style={styles.svg}><Emoji1 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji2 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji3 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji4 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji5 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji6 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji7 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji8 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji9 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji10 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji11 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji12 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji13 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji14 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji15 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji16 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji17 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji18 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji19 w={40} h={40} s={2}/></View>
                     </View>
-                    
-                    <View style={styles.svg}><Emoji1 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji2 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji3 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji4 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji5 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji6 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji7 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji8 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji9 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji10 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji11 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji12 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji13 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji14 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji15 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji16 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji17 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji18 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji19 w={40} h={40} s={2}/></View>
-                  </View>
-                  <View style={{width:600,height:300,flexDirection:'row'}}>
-                    <View style={styles.svg}><Emoji20 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji21 w={40} h={40} s={2}/></View>
-                    <View style={styles.svg}><Emoji22 w={40} h={40} s={2}/></View>
-                  </View>
-                </ScrollView>
-              </View>
+                    <View style={{width:600,height:300,flexDirection:'row'}}>
+                      <View style={styles.svg}><Emoji20 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji21 w={40} h={40} s={2}/></View>
+                      <View style={styles.svg}><Emoji22 w={40} h={40} s={2}/></View>
+                    </View>
+                  </ScrollView>
+                </View>
+                ):null}
+              
             </View>
          );
    }

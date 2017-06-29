@@ -11,7 +11,7 @@ import Mine from '../view/Mine';
 class Index extends React.Component {
    constructor(props) {
        super(props);
-       this.state = { page: 1 };
+       this.state = { page: 0 };
      }
    pageChange(num) {  
      this.setState({  
@@ -36,7 +36,7 @@ class Index extends React.Component {
                   <Mine/>
                </Display>
             </View>
-            <Nav goWX={() =>this.pageChange(0)} goTXL={()=>this.pageChange(1)} goFX={()=>this.pageChange(2)} goW={()=>this.pageChange(3)}/>
+            <Nav go={(num) =>this.pageChange(num)} state={this.state.page}/>
          </View>
          );
    }

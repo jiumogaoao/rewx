@@ -9,31 +9,34 @@ import {
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
 
 class Nav extends Component {
-   
+   constructor(props) {
+       super(props);
+       this.state = { page: 0 };
+     }
    render() {
       return (
             <View style={{height : 100,flexDirection:'row',justifyContent : 'space-between'}}>
-               <TouchableHighlight onPress={() => this.props.goWX()} style={{flex :1,flexDirection : 'column'}}>
+               <TouchableHighlight onPress={() => {this.props.go(0);}} style={{flex :1,flexDirection : 'column'}}>
                   <View style={styles.navFrame}>
-                     <Icon name="qipao" style={styles.icon}/>
+                     <Icon name={this.props.state==0?"qipao":"qipao2"} style={[styles.icon,{color:this.props.state==0?"green":"#000"}]}/>
                      <Text style={styles.text}>微信</Text>
                   </View>
                </TouchableHighlight>
-               <TouchableHighlight onPress={() => this.props.goTXL()} style={{flex :1}}>
+               <TouchableHighlight onPress={() => {this.props.go(1);}} style={{flex :1}}>
                   <View style={styles.navFrame}>
-                     <Icon name="tongxunlu" style={styles.icon}/>
+                     <Icon name={this.props.state==1?"tongxunlu2":"tongxunlu"} style={[styles.icon,{color:this.props.state==1?"green":"#000"}]}/>
                      <Text style={styles.text}>通讯录</Text>
                   </View>
                </TouchableHighlight>
-               <TouchableHighlight onPress={() => this.props.goFX()} style={{flex :1}}>
+               <TouchableHighlight onPress={() => {this.props.go(2);}} style={{flex :1}}>
                   <View style={styles.navFrame}>
-                     <Icon name="faxian" style={styles.icon}/>
+                     <Icon name={this.props.state==2?"faxian2":"faxian"} style={[styles.icon,{color:this.props.state==2?"green":"#000"}]}/>
                      <Text style={styles.text}>发现</Text>
                   </View>
                </TouchableHighlight>
-               <TouchableHighlight onPress={() => this.props.goW()} style={{flex :1}}>
+               <TouchableHighlight onPress={() => {this.props.go(3);}} style={{flex :1}}>
                   <View style={styles.navFrame}>
-                     <Icon name="wo" style={styles.icon}/>
+                     <Icon name={this.props.state==3?"wo2":"wo"} style={[styles.icon,{color:this.props.state==3?"green":"#000"}]}/>
                      <Text style={styles.text}>我</Text>
                   </View>
                </TouchableHighlight>
@@ -50,8 +53,7 @@ const styles = StyleSheet.create({
   icon:{
    lineHeight:50,
    textAlign:'center',
-   fontSize:40,
-   color:"#000"
+   fontSize:40
   },
   text:{
    textAlign:'center'

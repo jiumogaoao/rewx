@@ -8,14 +8,12 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
-
 class Cell extends Component {
    
    render() {
       return (
             <View style={{flexDirection:'row',height:60,borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
-              {this.props.icon?<Icon name={this.props.icon} style={{fontSize:25,lineHeight:25,marginTop:12,
-                marginLeft:10}}/>:<Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+              {this.props.other?this.props.other:<Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
        style={{width: 40, height: 40,marginTop:10,marginLeft:10}} />}
               <View style={{flex:1}}>
                 <Text style={{marginLeft:10,fontSize:30,marginTop:7}}>{this.props.name}</Text>
