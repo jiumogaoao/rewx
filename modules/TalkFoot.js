@@ -9,29 +9,7 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
-import Emoji0 from '../svg/Emoji0';
-import Emoji1 from '../svg/Emoji1';
-import Emoji2 from '../svg/Emoji2';
-import Emoji3 from '../svg/Emoji3';
-import Emoji4 from '../svg/Emoji4';
-import Emoji5 from '../svg/Emoji5';
-import Emoji6 from '../svg/Emoji6';
-import Emoji7 from '../svg/Emoji7';
-import Emoji8 from '../svg/Emoji8';
-import Emoji9 from '../svg/Emoji9';
-import Emoji10 from '../svg/Emoji10';
-import Emoji11 from '../svg/Emoji11';
-import Emoji12 from '../svg/Emoji12';
-import Emoji13 from '../svg/Emoji13';
-import Emoji14 from '../svg/Emoji14';
-import Emoji15 from '../svg/Emoji15';
-import Emoji16 from '../svg/Emoji16';
-import Emoji17 from '../svg/Emoji17';
-import Emoji18 from '../svg/Emoji18';
-import Emoji19 from '../svg/Emoji19';
-import Emoji20 from '../svg/Emoji20';
-import Emoji21 from '../svg/Emoji21';
-import Emoji22 from '../svg/Emoji22';
+import Face from '../svg/Face';
 const styles = StyleSheet.create({
   svg:{
     marginLeft:40,
@@ -94,33 +72,35 @@ class TalkFoot extends Component {
          horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
                     <View style={{width:600,height:300,flexDirection:'row',flexWrap:'wrap'}}>
                       <View style={styles.svg}>
-                        <Emoji0 w={40} h={40} s={2}/>
+                        <Face s={0.2} num={0}/>
                       </View>
                       
-                      <View style={styles.svg}><Emoji1 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji2 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji3 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji4 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji5 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji6 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji7 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji8 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji9 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji10 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji11 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji12 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji13 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji14 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji15 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji16 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji17 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji18 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji19 w={40} h={40} s={2}/></View>
+                      
+                      <View style={styles.svg}><Face s={0.2} num={1}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={2}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={3}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={4}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={5}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={6}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={7}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={8}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={9}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={10}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={11}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={12}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={13}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={14}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={15}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={16}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={17}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={18}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={19}/></View>
                     </View>
                     <View style={{width:600,height:300,flexDirection:'row'}}>
-                      <View style={styles.svg}><Emoji20 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji21 w={40} h={40} s={2}/></View>
-                      <View style={styles.svg}><Emoji22 w={40} h={40} s={2}/></View>
+                      
+                      <View style={styles.svg}><Face s={0.2} num={20}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={21}/></View>
+                      <View style={styles.svg}><Face s={0.2} num={22}/></View>
                     </View>
                   </ScrollView>
                 </View>
