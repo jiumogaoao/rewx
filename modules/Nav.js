@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
    justifyContent : 'space-around'
   },
   icon:{
-   lineHeight:50,
+   lineHeight:45,
    textAlign:'center',
-   fontSize:40
+   fontSize:45,
+   height:50
   },
   text:{
    textAlign:'center'
