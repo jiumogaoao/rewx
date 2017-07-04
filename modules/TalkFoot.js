@@ -88,15 +88,14 @@ class TalkFoot extends Component {
                     {this.renderScrollItem([
                       {icon:'xiangche',name:'相册',key:'a',c:()=>{ImagePicker.showImagePicker({
   title: 'Select Avatar',
-  customButtons: [
-    {name: 'fb', title: 'Choose Photo from Facebook'},
-  ],
+  takePhotoButtonTitle:null,
   storageOptions: {
     skipBackup: true,
     path: 'images'
   }
 }, (response) => {
-  console.log('Response = ', response);
+
+             console.log('Response = ', response);
 
   if (response.didCancel) {
     console.log('User cancelled image picker');
@@ -117,8 +116,40 @@ class TalkFoot extends Component {
       avatarSource: source
     });
   }
+        
 });}},
-                      {icon:'paise',name:'拍摄',key:'aa',c:()=>{}},
+                      {icon:'paise',name:'拍摄',key:'aa',c:()=>{ImagePicker.showImagePicker({
+  title: 'Select Avatar',
+  chooseFromLibraryButtonTitle:null,
+  storageOptions: {
+    skipBackup: true,
+    path: 'images'
+  }
+}, (response) => {
+
+             console.log('Response = ', response);
+
+  if (response.didCancel) {
+    console.log('User cancelled image picker');
+  }
+  else if (response.error) {
+    console.log('ImagePicker Error: ', response.error);
+  }
+  else if (response.customButton) {
+    console.log('User tapped custom button: ', response.customButton);
+  }
+  else {
+    let source = { uri: response.uri };
+
+    // You can also display the image using data:
+    // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+    this.setState({
+      avatarSource: source
+    });
+  }
+        
+});}},
                       {icon:'shiping',name:'视频聊天',key:'aaa',c:()=>{}},
                       {icon:'weizhi',name:'位置',key:'aaaa',c:()=>{}},
                       {icon:'hongbao',name:'红包',key:'aaaaa',c:()=>{}},
