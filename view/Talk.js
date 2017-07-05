@@ -38,7 +38,7 @@ class Talk extends React.Component {
               ]}
             />
             </View>
-            <TalkFoot faceClick={(num)=>{console.log(num)}} say={(data)=>{console.log(data)}} write={(data)=>{console.log(data)}} pic={(data)=>{console.log(data)}} video={(data)=>{console.log(data)}} place={(data)=>{console.log(data)}}/>
+            <TalkFoot faceClick={(num)=>{console.log(num)}} say={(data)=>{console.log(data)}} write={(data)=>{console.log(data)}} pic={(data)=>{console.log(data)}} video={(data)=>{console.log(data)}} place={(data)=>this.props.navigation.navigate('MapV', {data: data})}/>
          </View>
       );
    }

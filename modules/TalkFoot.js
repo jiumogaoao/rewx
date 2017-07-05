@@ -151,7 +151,7 @@ class TalkFoot extends Component {
         
 });}},
                       {icon:'shiping',name:'视频聊天',key:'aaa',c:()=>{}},
-                      {icon:'weizhi',name:'位置',key:'aaaa',c:()=>{}},
+                      {icon:'weizhi',name:'位置',key:'aaaa',c:this.props.place},
                       {icon:'hongbao',name:'红包',key:'aaaaa',c:()=>{}},
                       {icon:'zhuanzhang',name:'转账',key:'aaaaaa',c:()=>{}},
                       {icon:'wo2',name:'个人名片',key:'aaaaaaa',c:()=>{}},

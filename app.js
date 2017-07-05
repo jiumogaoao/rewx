@@ -14,12 +14,13 @@ import Mine from './view/Mine';
 import Info from './view/Info';
 import Talk from './view/Talk';
 import Zone from './view/Zone';
-
+import MapV from './view/MapV';
 const rewx = StackNavigator({
    Index: { screen: Index },
    Info: { screen: Info },
    Talk: { screen: Talk },
-   Zone: { screen: Zone }
+   Zone: { screen: Zone },
+   MapV:{screen:MapV}
 });
 
 AppRegistry.registerComponent('rewx', () => rewx);
