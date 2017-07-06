@@ -10,6 +10,9 @@ import {
 
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
 import Face from '../svg/Face';
+import {AudioRecorder, AudioUtils} from 'react-native-audio';
+import Sound from 'react-native-sound';
+let audioPath = AudioUtils.DocumentDirectoryPath + '/test.aac';
 var ImagePicker = require('react-native-image-picker');
 const styles = StyleSheet.create({
   svg:{
@@ -153,9 +156,37 @@ class TalkFoot extends Component {
                       {icon:'shiping',name:'视频聊天',key:'aaa',c:()=>{}},
                       {icon:'weizhi',name:'位置',key:'aaaa',c:this.props.place},
                       {icon:'hongbao',name:'红包',key:'aaaaa',c:()=>{}},
-                      {icon:'zhuanzhang',name:'转账',key:'aaaaaa',c:()=>{}},
-                      {icon:'wo2',name:'个人名片',key:'aaaaaaa',c:()=>{}},
-                      {icon:'yuying',name:'语音输入',key:'aaaaaaaa',c:()=>{}}])}
+                      {icon:'zhuanzhang',name:'转账',key:'aaaaaa',c:()=>{
+                        setTimeout(() => {
+      var sound = new Sound(audioPath, '', (error) => {
+        if (error) {
+          console.log('failed to load the sound', error);
+        }
+      });
+
+      setTimeout(() => {
+        sound.play((success) => {
+          if (success) {
+            console.log('successfully finished playing');
+          } else {
+            console.log('playback failed due to audio decoding errors');
+          }
+        });
+      }, 100);
+    }, 100);
+                      }},
+                      {icon:'wo2',name:'个人名片',key:'aaaaaaa',c:()=>{
+                        AudioRecorder.stopRecording();
+                      }},
+                      {icon:'yuying',name:'语音输入',key:'aaaaaaaa',c:()=>{
+                        AudioRecorder.prepareRecordingAtPath(audioPath, {
+                          SampleRate: 22050,
+                          Channels: 1,
+                          AudioQuality: "Low",
+                          AudioEncoding: "aac"
+                        });
+                        AudioRecorder.startRecording();
+                      }}])}
                   </View>
                   <View style={{width:600,height:300,flexDirection:'row'}}>
                     {this.renderScrollItem([
