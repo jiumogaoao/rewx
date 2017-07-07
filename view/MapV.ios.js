@@ -4,8 +4,7 @@ import {
    Text,
    Button,
    View,
-   StyleSheet,
-   Dimensions
+   StyleSheet
 } from 'react-native';
 import MapView from 'react-native-maps'
 

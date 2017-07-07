@@ -12,14 +12,14 @@ class Cell extends Component {
    
    render() {
       return (
-            <View style={{flexDirection:'row',height:60,borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
+            <View style={{flexDirection:'row',height:parseInt(60*w),borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
               {this.props.other?this.props.other:<Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
-       style={{width: 40, height: 40,marginTop:10,marginLeft:10}} />}
+       style={{width: parseInt(40*w), height: parseInt(40*w),marginTop:parseInt(10*w),marginLeft:parseInt(10*w)}} />}
               <View style={{flex:1}}>
-                <Text style={{marginLeft:10,fontSize:30,marginTop:7}}>{this.props.name}</Text>
+                <Text style={{marginLeft:parseInt(10*w),fontSize:parseInt(30*w),marginTop:parseInt(7*w)}}>{this.props.name}</Text>
               </View>
-              {this.props.dsc?<Text style={{textAlign:"left",marginTop:14,fontSize:20}}>{this.props.dsc}</Text>:null}
-              {this.props.deg?<Icon name="jiao" style={{marginRight:20,fontSize:25,marginTop:14,lineHeight:25}}/>:null}
+              {this.props.dsc?<Text style={{textAlign:"left",marginTop:parseInt(14*w),fontSize:parseInt(20*w)}}>{this.props.dsc}</Text>:null}
+              {this.props.deg?<Icon name="jiao" style={{marginRight:parseInt(20*w),fontSize:parseInt(25*w),marginTop:parseInt(14*w),lineHeight:parseInt(25*w)}}/>:null}
             </View>
          );
    }

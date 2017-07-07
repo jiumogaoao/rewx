@@ -14,8 +14,25 @@ class Nav extends Component {
        this.state = { page: 0 };
      }
    render() {
+    const styles = StyleSheet.create({
+  navFrame: {
+   flex:1,
+   flexDirection : 'column',
+   justifyContent : 'space-around'
+  },
+  icon:{
+   lineHeight:parseInt(45*w),
+   textAlign:'center',
+   fontSize:parseInt(45*w),
+   height:parseInt(50*w)
+  },
+  text:{
+   textAlign:'center'
+  }
+});
+    console.log(w)
       return (
-            <View style={{height : 100,flexDirection:'row',justifyContent : 'space-between'}}>
+            <View style={{height : parseInt(100*w),flexDirection:'row',justifyContent : 'space-between'}}>
                <TouchableHighlight onPress={() => {this.props.go(0);}} style={{flex :1,flexDirection : 'column'}}>
                   <View style={styles.navFrame}>
                      <Icon name={this.props.state==0?"qipao":"qipao2"} style={[styles.icon,{color:this.props.state==0?"green":"#000"}]}/>
@@ -44,20 +61,5 @@ class Nav extends Component {
          );
    }
 }
-const styles = StyleSheet.create({
-  navFrame: {
-   flex:1,
-   flexDirection : 'column',
-   justifyContent : 'space-around'
-  },
-  icon:{
-   lineHeight:45,
-   textAlign:'center',
-   fontSize:45,
-   height:50
-  },
-  text:{
-   textAlign:'center'
-  }
-});
+
 export default Nav;

@@ -3,7 +3,7 @@ import {
    AppRegistry,
    Text,
    Button,
-   View,
+   View
 } from 'react-native';
 
 class Zone extends React.Component {

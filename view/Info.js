@@ -3,7 +3,7 @@ import {
    AppRegistry,
    Text,
    Button,
-   View,
+   View
 } from 'react-native';
 
 class Info extends React.Component {

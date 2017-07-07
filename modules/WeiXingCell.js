@@ -14,16 +14,16 @@ class WeiXingCell extends Component {
    render() {
       return (
           <TouchableHighlight onPress={() => this.props.go(this.props.id)}>
-            <View style={{flexDirection:'row',height:100,borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
+            <View style={{flexDirection:'row',height:parseInt(100*w),borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
               <Image source={{uri: this.props.img}}
-       style={{width: 80, height: 80,marginTop:10,marginLeft:10}} />
+       style={{width: parseInt(80*w), height: parseInt(80*w),marginTop:parseInt(10*w),marginLeft:parseInt(10*w)}} />
               <View style={{flex:1}}>
-                <Text style={{marginLeft:10,fontSize:25,marginTop:10}}>{this.props.name}</Text>
-                <Text style={{marginTop:10,marginLeft:10}}>{this.props.dsc}</Text>
+                <Text style={{marginLeft:parseInt(10*w),fontSize:parseInt(25*w),marginTop:parseInt(10*w)}}>{this.props.name}</Text>
+                <Text style={{marginTop:parseInt(10*w),marginLeft:parseInt(10*w)}}>{this.props.dsc}</Text>
               </View>
               <View>
-                <Text style={{textAlign:'right',marginTop:10,marginRight:20}}>{this.props.time}</Text>
-                <Icon name={this.props.state} style={{textAlign:'right',marginRight:20,fontSize:15,lineHeight:15,marginTop:10}}/>
+                <Text style={{textAlign:'right',marginTop:parseInt(10*w),marginRight:parseInt(20*w)}}>{this.props.time}</Text>
+                <Icon name={this.props.state} style={{textAlign:'right',marginRight:parseInt(20*w),fontSize:parseInt(15*w),lineHeight:parseInt(15*w),marginTop:parseInt(10*w)}}/>
               </View>
             </View>
           </TouchableHighlight>

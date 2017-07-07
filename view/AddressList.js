@@ -10,14 +10,14 @@ import {
 import AddressCell from '../modules/AddressCell';
 import ListHead from '../modules/ListHead';
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
-const styles = StyleSheet.create({
+
+class AddressList extends Component {
+   render() {
+    const styles = StyleSheet.create({
   icon:{
-    width:60,height:60,marginLeft:10,marginTop:10,color:'#fff',fontSize:40,lineHeight:45,textAlign:'center'
+    width:parseInt(60*w),height:parseInt(60*w),marginLeft:parseInt(10*w),marginTop:parseInt(10*w),color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(45*w),textAlign:'center'
   }
 })
-class AddressList extends Component {
-   
-   render() {
       return (
             <SectionList
               renderItem={({item}) => <AddressCell name={item.name} other={item.other}/>}

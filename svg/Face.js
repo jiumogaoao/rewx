@@ -24,7 +24,7 @@ class Face extends Component {
    
    render() {
       return (
-            <Svg version="1.1" id="edrf" x="0" y="0" viewBox={"0 0 "+(200*this.props.s)+" "+(200*this.props.s)} width={200*this.props.s} height={200*this.props.s}>
+            <Svg version="1.1" id="edrf" x="0" y="0" viewBox={"0 0 "+(parseInt(200*w)*this.props.s)+" "+(parseInt(200*w)*this.props.s)} width={parseInt(200*w)*this.props.s} height={parseInt(200*w)*this.props.s}>
             {this.props.num==0?(<G scale={this.props.s}>
     <Path fill="#FFE500" d="M16.7,87.5c0,46,37.3,83.3,83.3,83.4s83.3-37.3,83.4-83.3c0,0,0,0,0,0c0-46-37.3-83.3-83.3-83.3
         S16.7,41.5,16.7,87.5C16.7,87.5,16.7,87.5,16.7,87.5z"/>

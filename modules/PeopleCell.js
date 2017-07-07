@@ -13,15 +13,15 @@ class PeopleCell extends Component {
    
    render() {
       return (
-            <View style={{flexDirection:'row',height:120,borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
+            <View style={{flexDirection:'row',height:parseInt(120*w),borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
               <Image source={{uri: this.props.img}}
-       style={{width: 100, height: 100,marginTop:10,marginLeft:10}} />
+       style={{width: parseInt(100*w), height: parseInt(100*w),marginTop:parseInt(10*w),marginLeft:parseInt(10*w)}} />
               <View style={{flex:1}}>
-                <Text style={{marginLeft:10,fontSize:30,marginTop:10}}>{this.props.name}</Text>
-                <Text style={{marginTop:15,marginLeft:10}}>{this.props.dsc}</Text>
+                <Text style={{marginLeft:parseInt(10*w),fontSize:parseInt(30*w),marginTop:parseInt(10*w)}}>{this.props.name}</Text>
+                <Text style={{marginTop:parseInt(15*w),marginLeft:parseInt(10*w)}}>{this.props.dsc}</Text>
               </View>
-              <Icon name="erweima" style={{fontSize:25,marginRight:10}}/>
-              <Icon name="jiao" style={{fontSize:25,lineHeight:25,marginRight:20,marginTop:40}}/>
+              <Icon name="erweima" style={{fontSize:parseInt(25*w),marginRight:parseInt(10*w)}}/>
+              <Icon name="jiao" style={{fontSize:parseInt(25*w),lineHeight:parseInt(25*w),marginRight:parseInt(20*w),marginTop:parseInt(40*w)}}/>
             </View>
          );
    }

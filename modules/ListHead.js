@@ -8,8 +8,8 @@ class ListHead extends Component {
    
    render() {
       return (
-            <View style={{height:30}}>
-            	<Text style={{lineHeight:25,marginLeft:20}}>{this.props.a}</Text>
+            <View style={{height:parseInt(30*w)}}>
+            	<Text style={{lineHeight:parseInt(25*w),marginLeft:parseInt(20*w)}}>{this.props.a}</Text>
             </View>
          );
    }

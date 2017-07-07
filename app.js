@@ -3,7 +3,8 @@
  */
 import React from 'react';
 import {
-   AppRegistry
+   AppRegistry,
+   Dimensions
 } from 'react-native';
 import { TabNavigator } from "react-navigation";
 import { StackNavigator } from "react-navigation";
@@ -15,6 +16,7 @@ import Info from './view/Info';
 import Talk from './view/Talk';
 import Zone from './view/Zone';
 import MapV from './view/MapV';
+global.w = Dimensions.get('window').width/720;
 const rewx = StackNavigator({
    Index: { screen: Index },
    Info: { screen: Info },
