@@ -16,14 +16,8 @@ let audioPath = AudioUtils.DocumentDirectoryPath + '/test.aac';
 var ImagePicker = require('react-native-image-picker');
 
 class ToolCell extends Component {
-
   render(){
-    const styles = StyleSheet.create({
-  svg:{
-    marginLeft:parseInt(40*w),
-    marginTop:parseInt(30*w)
-  }
-})
+    
     return (
       <TouchableOpacity onPress={() => {this.props.c()}} style={{width:'25%',height:parseInt(130*w)}}>
         <View style={{flex:1}}>
@@ -35,15 +29,19 @@ class ToolCell extends Component {
   }
 }
 class FaceCell extends Component {
-  render(){
-    const styles = StyleSheet.create({
+  constructor(props) {
+    super(props);
+    this.styles = StyleSheet.create({
   svg:{
     marginLeft:parseInt(40*w),
     marginTop:parseInt(30*w)
   }
   })
+  }
+  render(){
+    
     return (
-      <TouchableOpacity onPress={() => {this.props.c(this.props.n)}} style={[styles.svg,{width:parseInt(45*w),height:parseInt(45*w)}]}>
+      <TouchableOpacity onPress={() => {this.props.c(this.props.n)}} style={[this.styles.svg,{width:parseInt(45*w),height:parseInt(45*w)}]}>
                             <View style={{flex:1}}>
                               <Face s={0.2} num={this.props.n}/>
                             </View>

@@ -12,22 +12,26 @@ import ListHead from '../modules/ListHead';
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
 
 class AddressList extends Component {
-   render() {
-    const styles = StyleSheet.create({
+   constructor(props) {
+    super(props);
+    this.styles = StyleSheet.create({
   icon:{
     width:parseInt(60*w),height:parseInt(60*w),marginLeft:parseInt(10*w),marginTop:parseInt(10*w),color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(45*w),textAlign:'center'
   }
 })
+  }
+   render() {
+    
       return (
             <SectionList
               renderItem={({item}) => <AddressCell name={item.name} other={item.other}/>}
               renderSectionHeader={({section}) => section.nohead?null:<ListHead a={section.key}/>}
               sections={[ // 不同section渲染相同类型的子组件
                 {data: [
-                  {name:"新的朋友", key: 'A',other:(<Icon name="xinpengyou" style={[styles.icon,{backgroundColor:'red'}]}/>)},
-                  {name:"群聊", key: 'Ab',other:(<Icon name="qunliao" style={[styles.icon,{backgroundColor:'green'}]}/>)},
-                  {name:"标签", key: 'Ac',other:(<Icon name="biaoqian" style={[styles.icon,{backgroundColor:'yellow'}]}/>)},
-                  {name:"公众号", key: 'Ae',other:(<Icon name="gongzonghao" style={[styles.icon,{backgroundColor:'blue'}]}/>)}
+                  {name:"新的朋友", key: 'A',other:(<Icon name="xinpengyou" style={[this.styles.icon,{backgroundColor:'red'}]}/>)},
+                  {name:"群聊", key: 'Ab',other:(<Icon name="qunliao" style={[this.styles.icon,{backgroundColor:'green'}]}/>)},
+                  {name:"标签", key: 'Ac',other:(<Icon name="biaoqian" style={[this.styles.icon,{backgroundColor:'yellow'}]}/>)},
+                  {name:"公众号", key: 'Ae',other:(<Icon name="gongzonghao" style={[this.styles.icon,{backgroundColor:'blue'}]}/>)}
                   ], key: 'A0',nohead:true},
                 {data: [{name:"a", key: 'A'}], key: 'A'},
                 {data: [{name:"b", key: 'B'}], key: 'B'},
