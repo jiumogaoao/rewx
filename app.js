@@ -20,7 +20,9 @@ global.w = Dimensions.get('window').width/720;
 const rewx = StackNavigator({
    Index: { screen: Index },
    Info: { screen: Info },
-   Talk: { screen: Talk },
+   Talk: { screen: Talk,navigationOptions: {
+    headerTintColor: '#fff',headerStyle:{backgroundColor:"#000",textAlign:'center'},headerTitleStyle:{fontSize:30}
+  } },
    Zone: { screen: Zone },
    MapV:{screen:MapV}
 });
