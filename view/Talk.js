@@ -5,11 +5,13 @@ import {
    Button,
    View,
    Image,
-   SectionList
+   SectionList,
+   TouchableOpacity
 } from 'react-native';
 
 import TalkFoot from '../modules/TalkFoot';
 import TalkCell from '../modules/TalkCell';
+import Icon from 'react-native-vector-icons-iconfont/IconFont';
 class Talk extends React.Component {
    static navigationOptions = ({ navigation }) => {
       const {state, setParams} = navigation;
@@ -18,10 +20,9 @@ class Talk extends React.Component {
          title: data,
          headerTintColor: 'red',
          headerRight: (
-            <Button
-               title={data}
-               onPress={() => setParams({ data: 'b'})}
-            />
+            <TouchableOpacity onPress={()=>{}}>
+            <Icon name="wo2" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(40*w)}}/>
+          </TouchableOpacity>
          )
 
       };

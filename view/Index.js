@@ -13,28 +13,30 @@ import Found from '../view/Found';
 import Mine from '../view/Mine';
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
 import { NavigationActions } from 'react-navigation'
+
+var d=null;
 class Index extends React.Component {
+
    constructor(props) {
        super(props);
        this.state = { page: 0 ,weiXingPop:false};
-     }
+       d=this;
+     };
    static navigationOptions = ({ navigation }) => {
-      console.log(this)
       const  pageName= ["微信","通讯录","发现","我"];
       var rbutton=null;
       if(!navigation.state.params||navigation.state.params.page==0){
         rbutton=(
           <TouchableOpacity onPress={()=>{
-            console.log(navigation)
-            //this.setState({weiXingPop:!this.state.weiXingPop})
+            d.setState({weiXingPop:!d.state.weiXingPop})
           }}>
-            <Icon name="jia" style={{color:'#fff',fontSize:25,top:-25,right:0,width:40}}/>
+            <Icon name="jia" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(40*w)}}/>
           </TouchableOpacity>
          )
       }else if(navigation.state.params.page==1){
         rbutton=(
           <TouchableOpacity>
-            <Icon name="jiahaoyou" style={{color:'#fff',fontSize:25,top:-25,right:0,width:40}}/>
+            <Icon name="jiahaoyou" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(40*w)}}/>
           </TouchableOpacity>  
          )
       }
@@ -45,7 +47,8 @@ class Index extends React.Component {
    };
    pageChange(num) {  
      this.setState({  
-       page: num 
+       page: num,
+       weiXingPop:false
      }) 
      this.props.navigation.setParams({page: num})
    }
@@ -58,16 +61,16 @@ class Index extends React.Component {
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
             <View style={{flex : 1}}>
                <Display enable={this.state.page==0} keepAlive={true} style={{flex : 1}}>
-                  <WeiXing go={(data)=>this.props.navigation.navigate('Talk', {data: data})} pop={this.state.weiXingPop} cancelPop={this.cancelWeiXingPop}/>
+                  <WeiXing go={(data)=>{this.setState({weiXingPop:false});this.props.navigation.navigate('Talk', {data: data})}} pop={this.state.weiXingPop} cancelPop={this.cancelWeiXingPop}/>
                </Display>
                <Display enable={this.state.page==1} keepAlive={true} style={{flex : 1}}>
-                  <AddressList/>
+                  <AddressList navigation={this.props.navigation}/>
                </Display>
                <Display enable={this.state.page==2} keepAlive={true} style={{flex : 1}}>
-                  <Found/>
+                  <Found navigation={this.props.navigation}/>
                </Display>
                <Display enable={this.state.page==3} keepAlive={true} style={{flex : 1}}>
-                  <Mine/>
+                  <Mine navigation={this.props.navigation}/>
                </Display>
             </View>
             <Nav go={(num) =>this.pageChange(num)} state={this.state.page}/>

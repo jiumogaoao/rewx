@@ -18,17 +18,17 @@ class Mine extends Component {
     super(props);
     this.styles = StyleSheet.create({
   icon:{
-    width:parseInt(40*w),
-    height:parseInt(40*w),
+    width:parseInt(45*w),
+    height:parseInt(50*w),
     textAlign:'center',
-    fontSize:parseInt(30*w),
-    lineHeight:parseInt(30*w),
-    marginTop:parseInt(10*w),
-    marginLeft:parseInt(10*w)
+    fontSize:parseInt(42*w),
+    lineHeight:parseInt(42*w),
+    marginTop:parseInt(16*w),
+    marginLeft:parseInt(5*w)
   },
   svg:{
-    marginLeft:parseInt(9*w),
-    marginTop:parseInt(9*w)
+    marginLeft:parseInt(5*w),
+    marginTop:parseInt(25*w)
   }
 })
   }
@@ -36,13 +36,18 @@ class Mine extends Component {
     
       return (
             <SectionList
-     renderItem={({item}) => <Cell deg={true}  name={item.name} other={item.other}/>}
+     renderItem={({item}) => <Cell deg={true}  name={item.name} other={item.other} go={item.go}/>}
      renderSectionHeader={({section}) => <ListHead a=" "/>}
      sections={[ // 不同section渲染相同类型的子组件
        {data: [{name:"某人", key: 'A',dsc:'微信号：jiumogaoao',img:'http://#'}], key: 'A',renderItem:({item})=><PeopleCell name={item.name} dsc={item.dsc} img={item.img}/>},
-     {data: [{name:"钱包", key: 'B',dsc:'bb',other:(<Icon name="qianbao" style={[this.styles.icon,{color:"blue"}]}/>)}], key: 'B'},
-     {data: [{name:"收藏", key: 'C',dsc:'cc',other:(<View style={this.styles.svg}><ShouCang w={parseInt(40*w)} h={parseInt(40*w)} s={0.6}/></View>)},{name:"相册", key: 'CC',dsc:'cc',other:(<Icon name="xiangche" style={[this.styles.icon,{color:"blue"}]}/>)},{name:"卡包", key: 'CCC',dsc:'cc',other:(<View style={this.styles.svg}><KaBao w={parseInt(40*w)} h={parseInt(40*w)} s={0.6}/></View>)},{name:"表情", key: 'CCCC',dsc:'cc',other:(<Icon name="biaoqing" style={[this.styles.icon,{color:"#fff",backgroundColor:"yellow",borderRadius:parseInt(40*w)}]}/>)}], key: 'C'},
-     {data: [{name:"设置", key: 'D',dsc:'dd',other:(<Icon name="shezhi" style={[this.styles.icon,{color:"blue"}]}/>)}], key: 'D'}
+     {data: [{name:"钱包", key: 'B',dsc:'bb',other:(<Icon name="qianbao" style={[this.styles.icon,{color:"#0faeff"}]}/>),go:()=>this.props.navigation.navigate('Password',{})}], key: 'B'},
+     {data: [
+      {name:"收藏", key: 'C',dsc:'cc',other:(<View style={this.styles.svg}><ShouCang s={0.035}/></View>)},
+      {name:"相册", key: 'CC',dsc:'cc',other:(<Icon name="xiangche" style={[this.styles.icon,{color:"#0faeff"}]}/>),go:()=>this.props.navigation.navigate('Album',{})},
+      {name:"卡包", key: 'CCC',dsc:'cc',other:(<View style={this.styles.svg}><KaBao s={0.035}/></View>)},
+      {name:"表情", key: 'CCCC',dsc:'cc',other:(<Icon name="biaoqing" style={[this.styles.icon,{color:"#fff",backgroundColor:"#f9ca08",borderRadius:parseInt(40*w)}]}/>)}
+      ], key: 'C'},
+     {data: [{name:"设置", key: 'D',dsc:'dd',other:(<Icon name="shezhi" style={[this.styles.icon,{color:"#0faeff"}]}/>)}], key: 'D'}
    ]}
    />
          );

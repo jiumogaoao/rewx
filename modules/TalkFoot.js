@@ -19,10 +19,10 @@ class ToolCell extends Component {
   render(){
     
     return (
-      <TouchableOpacity onPress={() => {this.props.c()}} style={{width:'25%',height:parseInt(130*w)}}>
-        <View style={{flex:1}}>
-          <Icon name={this.props.icon} style={{width:parseInt(80*w),height:parseInt(80*w),backgroundColor:'#fff',marginLeft:parseInt(35*w),textAlign:'center',fontSize:parseInt(50*w),lineHeight:parseInt(60*w),marginBottom:parseInt(10*w),borderRadius:parseInt(10*w),borderColor:'#999',borderWidth:1}}></Icon>
-          <Text style={{textAlign:'center',marginBottom:parseInt(10*w)}}>{this.props.name}</Text>
+      <TouchableOpacity onPress={() => {this.props.c()}} style={{width:'25%',height:parseInt(187*w)}}>
+        <View style={{flex:1,top:parseInt(20*w)}}>
+          <Icon name={this.props.icon} style={{width:parseInt(115*w),height:parseInt(115*w),backgroundColor:'#fff',marginLeft:parseInt(34*w),textAlign:'center',fontSize:parseInt(50*w),lineHeight:parseInt(75*w),marginBottom:parseInt(10*w),borderRadius:parseInt(20*w),borderColor:'#dedee0',borderWidth:1,color:'#6f7277'}}></Icon>
+          <Text style={{textAlign:'center',marginBottom:parseInt(10*w),fontSize:parseInt(22*w),marginTop:parseInt(10*w)}}>{this.props.name}</Text>
         </View>
       </TouchableOpacity>
       )
@@ -34,7 +34,7 @@ class FaceCell extends Component {
     this.styles = StyleSheet.create({
   svg:{
     marginLeft:parseInt(40*w),
-    marginTop:parseInt(30*w)
+    marginTop:parseInt(50*w)
   }
   })
   }
@@ -43,7 +43,7 @@ class FaceCell extends Component {
     return (
       <TouchableOpacity onPress={() => {this.props.c(this.props.n)}} style={[this.styles.svg,{width:parseInt(45*w),height:parseInt(45*w)}]}>
                             <View style={{flex:1}}>
-                              <Face s={0.2} num={this.props.n}/>
+                              <Face s={0.23} num={this.props.n}/>
                             </View>
                           </TouchableOpacity>
       )
@@ -72,20 +72,20 @@ class TalkFoot extends Component {
    }
    render() {
       return (
-            <View style={{height : this.state.state==0?parseInt(100*w):parseInt(400*w),flexDirection:'column',borderTopColor:'#000',borderTopWidth:1,backgroundColor:'#eee'}}>
-              <View style={{height:parseInt(100*w),flexDirection:'row',justifyContent : 'space-between'}}>
+            <View style={{height : this.state.state==0?parseInt(96*w):parseInt(525*w),flexDirection:'column',borderTopColor:'#d9d9db',borderTopWidth:1,backgroundColor:'#f5f5f7'}}>
+              <View style={{height:parseInt(96*w),flexDirection:'row',justifyContent : 'space-between'}}>
                 <TouchableOpacity onPress={() => this.setState({state: 0 })}>
-                  <Icon name="yuying" style={{fontSize:parseInt(40*w),lineHeight:parseInt(40*w),textAlign:'center',width:parseInt(50*w),height:parseInt(50*w),borderColor:'#000',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginTop:parseInt(25*w)}}/>
+                  <Icon name="yuying" style={{fontSize:parseInt(40*w),lineHeight:parseInt(43*w),textAlign:'center',width:parseInt(55*w),height:parseInt(55*w),borderColor:'#8a8b8f',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginTop:parseInt(21*w),color:'#8a8b8f'}}/>
                 </TouchableOpacity>
                 <TextInput
-                  style={{height: parseInt(60*w),flex:1,backgroundColor:'#fff',marginLeft:parseInt(10*w),marginTop:parseInt(20*w)}}
-                  placeholder="Type here to translate!"
+                  style={{height: parseInt(70*w),flex:1,backgroundColor:'#fff',marginLeft:parseInt(10*w),marginTop:parseInt(12*w),borderWidth:1,borderColor:'#e3e3e5',borderRadius:parseInt(5*w)}}
+                  placeholder="Type here to translate!" underlineColorAndroid='transparent' 
                  />
                 <TouchableOpacity onPress={() => this.setState({state: 1 })}>
-                  <Icon name="biaoqing" style={{fontSize:parseInt(40*w),lineHeight:parseInt(40*w),textAlign:'center',width:parseInt(50*w),height:parseInt(50*w),borderColor:'#000',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginTop:parseInt(25*w)}}/>
+                  <Icon name="biaoqing" style={{fontSize:parseInt(40*w),lineHeight:parseInt(43*w),textAlign:'center',width:parseInt(55*w),height:parseInt(55*w),borderColor:'#8a8b8f',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginTop:parseInt(21*w),color:'#8a8b8f'}}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.setState({state: 2 })}>
-                  <Icon name="jia" style={{fontSize:parseInt(40*w),lineHeight:parseInt(37*w),textAlign:'center',width:parseInt(50*w),height:parseInt(50*w),borderColor:'#000',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginRight:parseInt(10*w),marginTop:parseInt(25*w)}}/>
+                  <Icon name="jia" style={{fontSize:parseInt(40*w),lineHeight:parseInt(37*w),textAlign:'center',width:parseInt(55*w),height:parseInt(55*w),borderColor:'#8a8b8f',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginRight:parseInt(10*w),marginTop:parseInt(21*w),color:'#8a8b8f'}}/>
                 </TouchableOpacity>
               </View>
               {this.state.state==2?(
@@ -93,7 +93,7 @@ class TalkFoot extends Component {
                 <ScrollView
           //水平方向  
        horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
-                  <View style={{width:parseInt(600*w),height:parseInt(300*w),flexDirection:'row',flexWrap:'wrap'}}>
+                  <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row',flexWrap:'wrap'}}>
                     {this.renderScrollItem([
                       {icon:'xiangche',name:'相册',key:'a',c:()=>{ImagePicker.showImagePicker({
   title: 'Select Avatar',
@@ -194,7 +194,7 @@ class TalkFoot extends Component {
                         AudioRecorder.startRecording();
                       }}])}
                   </View>
-                  <View style={{width:parseInt(600*w),height:parseInt(300*w),flexDirection:'row'}}>
+                  <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row'}}>
                     {this.renderScrollItem([
                       {icon:'shoucang',name:'收藏',key:'aaaaaaaaa',c:()=>{}},
                       {icon:'kaquan',name:'卡券',key:'aaaaaaaaaa',c:()=>{}}])}
@@ -207,12 +207,12 @@ class TalkFoot extends Component {
                   <ScrollView
             //水平方向  
          horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
-                    <View style={{width:parseInt(600*w),height:parseInt(300*w),flexDirection:'row',flexWrap:'wrap'}}>
+                    <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row',flexWrap:'wrap'}}>
                       {
                         this.draw(0,19)
                       }
                     </View>
-                    <View style={{width:parseInt(600*w),height:parseInt(300*w),flexDirection:'row'}}>
+                    <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row'}}>
                       {
                         this.draw(20,22)
                       }

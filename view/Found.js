@@ -18,17 +18,17 @@ class Found extends Component {
     super(props);
     this.styles = StyleSheet.create({
   icon:{
-    width:parseInt(40*w),
-    height:parseInt(40*w),
+    width:parseInt(45*w),
+    height:parseInt(50*w),
     textAlign:'center',
-    fontSize:parseInt(30*w),
-    lineHeight:parseInt(30*w),
-    marginTop:parseInt(10*w),
-    marginLeft:parseInt(10*w)
+    fontSize:parseInt(42*w),
+    lineHeight:parseInt(42*w),
+    marginTop:parseInt(16*w),
+    marginLeft:parseInt(5*w)
   },
   svg:{
-    marginLeft:parseInt(9*w),
-    marginTop:parseInt(9*w)
+    marginLeft:parseInt(5*w),
+    marginTop:parseInt(25*w)
   }
 });
   }
@@ -36,14 +36,14 @@ class Found extends Component {
     
       return (
 		  <SectionList
-	   renderItem={({item}) => <Cell dsc={item.dsc} deg={true}  name={item.name} other={item.other}/>}
+	   renderItem={({item}) => <Cell dsc={item.dsc} deg={true}  name={item.name} other={item.other} go={item.go}/>}
 	   renderSectionHeader={({section}) => <ListHead a=" "/>}
 	   sections={[ // 不同section渲染相同类型的子组件
-		   {data: [{name:"朋友圈", key: 'A',icon:'pengyouquan',other:(<View style={[this.styles.svg]}><PengYouQuan w={parseInt(40*w)} h={parseInt(40*w)} s={0.6}/></View>)}], key: 'A'},
-	   {data: [{name:"扫一扫", key: 'B',other:(<Icon name="saoyisao" style={[this.styles.icon,{color:'blue'}]}/>)},{name:"摇一摇", key: 'BB',other:(<Icon name="yaoyiyao" style={[this.styles.icon,{color:'blue'}]}/>)}], key: 'B'},
-	   {data: [{name:"附近的人", key: 'C',other:(<Icon name="fujinderen" style={[this.styles.icon,{color:'blue'}]}/>)},{name:"漂流瓶", key: 'CC',other:(<Icon name="piaoliuping" style={[this.styles.icon,{color:'blue'}]}/>)}], key: 'C'},
-	   {data: [{name:"购物", key: 'D',icon:'gouwu',other:(<Icon name="gouwu" style={[this.styles.icon,{color:'red'}]}/>)},{name:"游戏", key: 'DD',icon:'youxi',other:(<View style={[this.styles.svg]}><YouXi w={parseInt(40*w)} h={parseInt(40*w)} s={0.6}/></View>)}], key: 'D'},
-	   {data: [{name:"小程序", key: 'E',other:(<Icon name="xiaochengxu" style={[this.styles.icon,{color:'blue'}]}/>)}], key: 'E'}
+		   {data: [{name:"朋友圈", key: 'A',icon:'pengyouquan',other:(<View style={[this.styles.svg]}><PengYouQuan s={0.035}/></View>),go:()=>{this.props.navigation.navigate('Zone', {})}}], key: 'A'},
+	   {data: [{name:"扫一扫", key: 'B',other:(<Icon name="saoyisao" style={[this.styles.icon,{color:'#07acfb'}]}/>),go:()=>{}},{name:"摇一摇", key: 'BB',other:(<Icon name="yaoyiyao" style={[this.styles.icon,{color:'#07acfb'}]}/>),go:()=>{}}], key: 'B'},
+	   {data: [{name:"附近的人", key: 'C',other:(<Icon name="fujinderen" style={[this.styles.icon,{color:'#07acfb'}]}/>),go:()=>{}},{name:"漂流瓶", key: 'CC',other:(<Icon name="piaoliuping" style={[this.styles.icon,{color:'#07acfb'}]}/>),go:()=>{}}], key: 'C'},
+	   {data: [{name:"购物", key: 'D',icon:'gouwu',other:(<Icon name="gouwu" style={[this.styles.icon,{color:'#ff5b5e'}]}/>),go:()=>{}},{name:"游戏", key: 'DD',icon:'youxi',other:(<View style={[this.styles.svg]}><YouXi s={0.035}/></View>),go:()=>{}}], key: 'D'},
+	   {data: [{name:"小程序", key: 'E',other:(<Icon name="xiaochengxu" style={[this.styles.icon,{color:'#778ccf'}]}/>),go:()=>{}}], key: 'E'}
    ]}
    />
          );

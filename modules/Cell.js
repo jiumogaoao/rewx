@@ -3,7 +3,7 @@ import {
    Text,
    View,
    StyleSheet,
-   TouchableHighlight,
+   TouchableOpacity,
    Image
 } from 'react-native';
 
@@ -12,14 +12,18 @@ class Cell extends Component {
    
    render() {
       return (
-            <View style={{flexDirection:'row',height:parseInt(60*w),borderBottomWidth:1,borderBottomColor:"#ccc",backgroundColor:"#fff"}}>
-              {this.props.other?this.props.other:<Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
-       style={{width: parseInt(40*w), height: parseInt(40*w),marginTop:parseInt(10*w),marginLeft:parseInt(10*w)}} />}
-              <View style={{flex:1}}>
-                <Text style={{marginLeft:parseInt(10*w),fontSize:parseInt(30*w),marginTop:parseInt(7*w)}}>{this.props.name}</Text>
+            <View style={{backgroundColor:"#fff"}}>
+              <TouchableOpacity onPress={this.props.go}>
+              <View style={{flexDirection:'row',height:parseInt(84*w),borderBottomWidth:1,borderBottomColor:"#e2e2e2",width:parseInt(700*w),marginLeft:'auto'}}>
+                {this.props.other?this.props.other:<Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+                 style={{width: parseInt(43*w), height: parseInt(43*w),marginTop:parseInt(20*w),marginLeft:parseInt(3*w)}} />}
+                <View style={{flex:1}}>
+                  <Text style={{marginLeft:parseInt(38*w),fontSize:parseInt(30*w),marginTop:parseInt(20*w),color:'#000'}}>{this.props.name}</Text>
+                </View>
+                {this.props.dsc?<Text style={{textAlign:"left",marginTop:parseInt(25*w),fontSize:parseInt(24*w)}}>{this.props.dsc}</Text>:null}
+                {this.props.deg?<Icon name="jiao" style={{marginRight:parseInt(30*w),fontSize:parseInt(24*w),marginTop:parseInt(25*w),lineHeight:parseInt(25*w)}}/>:null}
               </View>
-              {this.props.dsc?<Text style={{textAlign:"left",marginTop:parseInt(14*w),fontSize:parseInt(20*w)}}>{this.props.dsc}</Text>:null}
-              {this.props.deg?<Icon name="jiao" style={{marginRight:parseInt(20*w),fontSize:parseInt(25*w),marginTop:parseInt(14*w),lineHeight:parseInt(25*w)}}/>:null}
+              </TouchableOpacity>
             </View>
          );
    }

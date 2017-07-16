@@ -16,7 +16,7 @@ class AddressList extends Component {
     super(props);
     this.styles = StyleSheet.create({
   icon:{
-    width:parseInt(60*w),height:parseInt(60*w),marginLeft:parseInt(10*w),marginTop:parseInt(10*w),color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(45*w),textAlign:'center'
+    width:parseInt(68*w),height:parseInt(68*w),marginLeft:parseInt(10*w),marginTop:parseInt(18*w),color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(48*w),textAlign:'center'
   }
 })
   }
@@ -28,10 +28,10 @@ class AddressList extends Component {
               renderSectionHeader={({section}) => section.nohead?null:<ListHead a={section.key}/>}
               sections={[ // 不同section渲染相同类型的子组件
                 {data: [
-                  {name:"新的朋友", key: 'A',other:(<Icon name="xinpengyou" style={[this.styles.icon,{backgroundColor:'red'}]}/>)},
-                  {name:"群聊", key: 'Ab',other:(<Icon name="qunliao" style={[this.styles.icon,{backgroundColor:'green'}]}/>)},
-                  {name:"标签", key: 'Ac',other:(<Icon name="biaoqian" style={[this.styles.icon,{backgroundColor:'yellow'}]}/>)},
-                  {name:"公众号", key: 'Ae',other:(<Icon name="gongzonghao" style={[this.styles.icon,{backgroundColor:'blue'}]}/>)}
+                  {name:"新的朋友", key: 'A',other:(<Icon name="xinpengyou" style={[this.styles.icon,{backgroundColor:'#f59f48'}]}/>)},
+                  {name:"群聊", key: 'Ab',other:(<Icon name="qunliao" style={[this.styles.icon,{backgroundColor:'#1aac1b'}]}/>)},
+                  {name:"标签", key: 'Ac',other:(<Icon name="biaoqian" style={[this.styles.icon,{backgroundColor:'#1c84e5'}]}/>)},
+                  {name:"公众号", key: 'Ae',other:(<Icon name="gongzonghao" style={[this.styles.icon,{backgroundColor:'#2880d7'}]}/>)}
                   ], key: 'A0',nohead:true},
                 {data: [{name:"a", key: 'A'}], key: 'A'},
                 {data: [{name:"b", key: 'B'}], key: 'B'},

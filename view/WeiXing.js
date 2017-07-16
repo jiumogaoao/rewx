@@ -21,7 +21,7 @@ class WeiXing extends Component {
                 />
               </View>
               {
-                this.props.pop?(<View style={{position:'absolute',top:-5,right:10}}>
+                this.props.pop?(<View style={{position:'absolute',top:-5,right:parseInt(12*w)}}>
                 <TopRightPop/>
               </View>):null
               }
