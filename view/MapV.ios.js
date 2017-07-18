@@ -4,9 +4,9 @@ import {
    Text,
    Button,
    View,
-   StyleSheet
+   StyleSheet,
+   StatusBar
 } from 'react-native';
-import MapView from 'react-native-maps'
 
 class MapV extends React.Component {
 
@@ -27,10 +27,7 @@ onRegionChange(region) {
  
 render() {
   return (
-    <MapView
-      region={this.state.region}
-      onRegionChange={this.onRegionChange}
-    />
+    <View><StatusBar backgroundColor="#000"/></View>
   );
 }
 }

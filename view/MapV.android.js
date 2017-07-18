@@ -5,7 +5,8 @@ import {
    Button,
    View,
    StyleSheet,
-   Dimensions
+   Dimensions,
+   StatusBar
 } from 'react-native';
 import { MapView, MapTypes, MapModule, Geolocation } from 'react-native-baidu-map'
 
@@ -41,6 +42,7 @@ class MapV extends React.Component {
    render() {
       return (
          <View style={styles.container}>
+         <StatusBar backgroundColor="#000"/>
         <MapView 
           trafficEnabled={this.state.trafficEnabled}
           baiduHeatMapEnabled={this.state.baiduHeatMapEnabled}

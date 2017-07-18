@@ -4,7 +4,8 @@ import {
    View,
    Image,
    StyleSheet,
-   FlatList
+   FlatList,
+   StatusBar
 } from 'react-native';
 
 import AlbumCell from '../modules/AlbumCell';
@@ -20,6 +21,7 @@ class Album extends Component {
     
       return (
             <View style={{backgroundColor:'#fff'}}>
+            <StatusBar backgroundColor="#000"/>
             <FlatList
                   data={[
                     {key:'head',pic:'https://facebook.github.io/react/img/logo_og.png',name:'dsd',head:'https://facebook.github.io/react/img/logo_og.png'},

@@ -3,7 +3,8 @@ import {
    View,
    Button,
    Text,
-   TouchableOpacity
+   TouchableOpacity,
+   StatusBar
 } from 'react-native';
 import Display from 'react-native-display';
 import Nav from '../modules/Nav';
@@ -59,19 +60,18 @@ class Index extends React.Component {
       let page=this.state.page
       return (
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
+            <StatusBar backgroundColor="#000"/>
             <View style={{flex : 1}}>
-               <Display enable={this.state.page==0} keepAlive={true} style={{flex : 1}}>
-                  <WeiXing go={(data)=>{this.setState({weiXingPop:false});this.props.navigation.navigate('Talk', {data: data})}} pop={this.state.weiXingPop} cancelPop={this.cancelWeiXingPop}/>
-               </Display>
-               <Display enable={this.state.page==1} keepAlive={true} style={{flex : 1}}>
-                  <AddressList navigation={this.props.navigation}/>
-               </Display>
-               <Display enable={this.state.page==2} keepAlive={true} style={{flex : 1}}>
-                  <Found navigation={this.props.navigation}/>
-               </Display>
-               <Display enable={this.state.page==3} keepAlive={true} style={{flex : 1}}>
-                  <Mine navigation={this.props.navigation}/>
-               </Display>
+               {this.state.page==0?(<WeiXing go={(data)=>{this.setState({weiXingPop:false});this.props.navigation.navigate('Talk', {data: data})}} pop={this.state.weiXingPop} cancelPop={this.cancelWeiXingPop}/>):null}
+               {this.state.page==1?(
+                  <AddressList navigation={this.props.navigation}/>):null
+               }
+               {this.state.page==2?(
+                  <Found navigation={this.props.navigation}/>):null
+               }
+               {this.state.page==3?(
+                  <Mine navigation={this.props.navigation}/>):null
+               }
             </View>
             <Nav go={(num) =>this.pageChange(num)} state={this.state.page}/>
          </View>

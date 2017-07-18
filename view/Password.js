@@ -6,7 +6,8 @@ import {
    StyleSheet,
    FlatList,
    TouchableOpacity,
-   PanResponder
+   PanResponder,
+   StatusBar
 } from 'react-native';
 import Mimasuo from '../svg/Mimasuo';
 class Password extends Component {
@@ -191,6 +192,7 @@ class Password extends Component {
     
       return (
             <View style={{flex:1,backgroundColor:'#fff'}}>
+            <StatusBar backgroundColor="#000"/>
               <Text style={{textAlign:'center',fontSize:parseInt(30*w),color:this.state.collect?'#000':'red',marginTop:parseInt(128*w)}}>{this.state.collect?'请输入手势密码':'密码错误'}</Text>
               <View style={{marginLeft:'auto',marginRight:'auto',height:parseInt(510*w),width:parseInt(510*w),marginTop:parseInt(124*w),zIndex:1}} {...this._panResponder.panHandlers}>
               <Mimasuo s={0.5} data={this.state}/>

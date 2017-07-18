@@ -22,12 +22,10 @@ class ZuoXia extends Component {
    
    render() {
       return (
-            <Svg id="zuoxia" x="0" y="0" viewBox={"0 0 "+(this.props.s*15)+" "+(this.props.s*26)} width={this.props.s*parseInt(15*w)} height={this.props.s*parseInt(26*w)} version="1.1">
+            <Svg id="zuoxia" x="0" y="0" viewBox={"0 0 "+(this.props.s*254.9)+" "+(this.props.s*374.6)} width={this.props.s*parseInt(254.9*w)} height={this.props.s*parseInt(374.6*w)} version="1.1">
               <G scale={this.props.s}>
-              <Path id="XMLID_3_" fill="#EBEBEB" d="M0,25.8V0h9l1.3,22c0,0.3,2,1.7,3,2.8c0.7,0.8,1.8,1.2,1.8,1.2L0,25.8z"
-    />
-  <Path id="XMLID_2_" fill="none" stroke="#D8D8D8" stroke-miterlimit="10" d="M9,0l1.3,22c0,0.3,2,1.7,3,2.8
-    c0.7,0.8,1.5,1.1,1.8,1.2"/>
+              <Path fill="#EBEBEB" d="M0.1,367.9h254.9c-57.5,0-104.2-46.6-104.2-104.2V0l0,0H0.1V367.9z"/>
+  <Path fill="#D4D4D4" d="M254.9,374.6c-61.1,0-110.8-49.7-110.8-110.8V0h13.3v263.8c0,53.8,43.7,97.5,97.5,97.5V374.6z"/>
               </G>
             </Svg>
          );

@@ -6,7 +6,8 @@ import {
    View,
    TouchableOpacity,
    Image,
-   FlatList
+   FlatList,
+   StatusBar
 } from 'react-native';
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
 import FriendGroupCell from '../modules/FriendGroupCell';
@@ -27,6 +28,7 @@ class Zone extends React.Component {
    render() {
       return (
          <View style={{backgroundColor:'#fff'}}>
+         <StatusBar backgroundColor="#000"/>
             <FlatList
                   data={[
                      {key:'head',pic:'https://facebook.github.io/react/img/logo_og.png',name:'dsd',head:'https://facebook.github.io/react/img/logo_og.png'},

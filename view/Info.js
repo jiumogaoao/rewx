@@ -3,7 +3,8 @@ import {
    AppRegistry,
    Text,
    Button,
-   View
+   View,
+   StatusBar
 } from 'react-native';
 
 class Info extends React.Component {
@@ -24,6 +25,7 @@ class Info extends React.Component {
    render() {
       return (
          <View>
+         <StatusBar backgroundColor="#000"/>
             <Text>Chat with Lucy</Text>
          </View>
       );
