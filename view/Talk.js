@@ -64,7 +64,7 @@ class Talk extends React.Component {
             <View style={{flex : 1}}>
 <SectionList
               renderItem={({item}) => <TalkCell data={item}/>}
-              renderSectionHeader={({section}) => <Text style={{textAlign:"center",backgroundColor:"#cccccc",color:'#fff',marginLeft:"auto",marginRight:"auto",marginTop:parseInt(10*w),fontSize:parseInt(18*w),lineHeight:parseInt(28*w),borderRadius:parseInt(10*w),paddingTop:parseInt(10*w),paddingBottom:parseInt(10*w),paddingLeft:parseInt(12*w),paddingRight:parseInt(12*w)}}>{section.time}</Text>}
+              renderSectionHeader={({section}) => <Text style={{backgroundColor:"#cccccc",color:'#fff',textAlign:'center',fontSize:parseInt(18*w),lineHeight:parseInt(28*w),width:parseInt(80*w),borderRadius:parseInt(10*w),marginLeft:'auto',marginRight:'auto',marginTop:parseInt(10*w),marginBottom:parseInt(10*w)}}>{section.time}</Text>}
               sections={this.state.list}
             />
             </View>
