@@ -57,6 +57,7 @@ class Index extends React.Component {
       this.setState({weiXingPop:false})
    }
    render() {
+      console.log(this.props.navigation.state.params)
       let page=this.state.page
       return (
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>

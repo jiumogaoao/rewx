@@ -34,7 +34,7 @@ class TopRightPop extends Component {
                   <Icon name='jiahaoyou' style={this.style.icon}/>
                   <Text style={this.style.text}>添加好友</Text>
                </View>
-               <TouchableOpacity onPressIn={() => {this.props.navigation.navigate('Qrcode', {});}}>
+               <TouchableOpacity onPressIn={() => {this.props.navigation.navigate('Qrcode', {callback:(data)=>{console.log(data)}});}}>
                <View style={this.style.list}>
                   <Icon name='saoyisao' style={this.style.icon}/>
                   <Text style={this.style.text}>扫一扫</Text>

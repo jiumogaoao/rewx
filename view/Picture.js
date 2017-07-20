@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 
-class Qrcode extends React.Component {
+class Picture extends React.Component {
 
    constructor(props) {
         super(props);
@@ -30,17 +30,8 @@ class Qrcode extends React.Component {
             this.camera = cam;
           }}
           style={styles.preview}
-          aspect={Camera.constants.Aspect.fill} barcodeScannerEnabled={true}
-                                onBarCodeRead={
-                                    (e)=>this.barcodeReceived(e)
-                                }>
-          <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',width:'100%'}}/>
-          <View style={{width:'100%',height:parseInt(400*w),flexDirection:'row'}}>
-              <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',height:'100%'}}/>
-              <View style={{width:parseInt(400*w),height:'100%'}}/>
-              <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',height:'100%'}}/>
-          </View>
-          <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',width:'100%'}}/>
+          aspect={Camera.constants.Aspect.fill}>
+          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
         </Camera>
       </View>
       );
@@ -54,6 +45,13 @@ class Qrcode extends React.Component {
             this.props.navigation.goBack();
         }
     }
+   takePicture() {
+    const options = {};
+    //options.location = ... 
+    this.camera.capture({metadata: options})
+      .then((data) => console.log(data))
+      .catch(err => console.error(err));
+  }
 }
 
 const styles = StyleSheet.create({
@@ -76,4 +74,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Qrcode;
+export default Picture;
