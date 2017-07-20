@@ -3,7 +3,7 @@ import {
    Text,
    View,
    StyleSheet,
-   TouchableHighlight,
+   TouchableOpacity,
    Image
 } from 'react-native';
 
@@ -34,10 +34,12 @@ class TopRightPop extends Component {
                   <Icon name='jiahaoyou' style={this.style.icon}/>
                   <Text style={this.style.text}>添加好友</Text>
                </View>
+               <TouchableOpacity onPressIn={() => {this.props.navigation.navigate('Qrcode', {});}}>
                <View style={this.style.list}>
                   <Icon name='saoyisao' style={this.style.icon}/>
                   <Text style={this.style.text}>扫一扫</Text>
                </View>
+               </TouchableOpacity>
                <View style={this.style.list}>
                   <Icon name='shoufukuan' style={this.style.icon}/>
                   <Text style={this.style.text}>收付款</Text>

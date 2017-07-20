@@ -62,7 +62,7 @@ class Index extends React.Component {
          <View style={{flex : 1,flexDirection : 'column',justifyContent : 'space-between'}}>
             <StatusBar backgroundColor="#000"/>
             <View style={{flex : 1}}>
-               {this.state.page==0?(<WeiXing go={(data)=>{this.setState({weiXingPop:false});this.props.navigation.navigate('Talk', {data: data})}} pop={this.state.weiXingPop} cancelPop={this.cancelWeiXingPop}/>):null}
+               {this.state.page==0?(<WeiXing navigation={this.props.navigation} go={(data)=>{this.setState({weiXingPop:false});this.props.navigation.navigate('Talk', {data: data})}} pop={this.state.weiXingPop} cancelPop={this.cancelWeiXingPop}/>):null}
                {this.state.page==1?(
                   <AddressList navigation={this.props.navigation}/>):null
                }

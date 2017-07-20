@@ -19,6 +19,7 @@ import MapV from './view/MapV';
 import Album from './view/Album';
 import Password from './view/Password';
 import Wallet from './view/Wallet';
+import Qrcode from './view/Qrcode';
 global.w = Dimensions.get('window').width/720;
 var navoption={
     headerTintColor: '#fff',headerStyle:{backgroundColor:"#000"},headerTitleStyle:{fontSize:parseInt(33*w)}
@@ -31,7 +32,8 @@ const rewx = StackNavigator({
    MapV:{screen:MapV,navigationOptions: navoption},
    Album:{screen:Album,navigationOptions: navoption},
    Password:{screen:Password,navigationOptions: navoption},
-   Wallet:{screen:Wallet,navigationOptions: navoption}
+   Wallet:{screen:Wallet,navigationOptions: navoption},
+   Qrcode:{screen:Qrcode,navigationOptions: navoption}
 });
 
 AppRegistry.registerComponent('rewx', () => rewx);
