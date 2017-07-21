@@ -76,7 +76,7 @@ class Talk extends React.Component {
                 list.push({data: [data], key: 'id_'+new Date().getTime(),time:(new Date()).Format("mm:ss")})
               }
               this.setState({list:list});
-            }} sound={(data)=>{this.setState({sound:data})}} place={(data)=>this.props.navigation.navigate('MapV', {data: data})}/>
+            }} sound={(data)=>{this.setState({sound:data})}} navigation={this.props.navigation}/>
             {this.state.sound?(<View style={{position: 'absolute',top:parseInt(300*w),left:parseInt(((720-300)/2)*w),width:parseInt(300*w),height:parseInt(300*w),backgroundColor:'rgba(0,0,0,0.2)',zIndex:30}}>
               <Icon name="yingping" style={{color:'#fff',textAlign:'center',fontSize:parseInt(150*w),lineHeight:parseInt(200*w)}}/>
             </View>):null}

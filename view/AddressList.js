@@ -10,20 +10,51 @@ import {
 import AddressCell from '../modules/AddressCell';
 import ListHead from '../modules/ListHead';
 import Icon from 'react-native-vector-icons-iconfont/IconFont';
-
+import Search from '../modules/Search';
 class AddressList extends Component {
    constructor(props) {
     super(props);
     this.styles = StyleSheet.create({
   icon:{
     width:parseInt(68*w),height:parseInt(68*w),marginLeft:parseInt(10*w),marginTop:parseInt(18*w),color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(48*w),textAlign:'center'
-  }
+  },
+  right:{textAlign:'center'}
 })
   }
    render() {
     
       return (
-            <SectionList
+            <View style={{flex:1}}>
+            <Search/>
+            <View style={{position:'absolute',top:parseInt(150*w),right:parseInt(20*w),zIndex:3}}>
+              <Text style={this.styles.right}>A</Text>
+              <Text style={this.styles.right}>B</Text>
+              <Text style={this.styles.right}>C</Text>
+              <Text style={this.styles.right}>D</Text>
+              <Text style={this.styles.right}>E</Text>
+              <Text style={this.styles.right}>F</Text>
+              <Text style={this.styles.right}>G</Text>
+              <Text style={this.styles.right}>H</Text>
+              <Text style={this.styles.right}>I</Text>
+              <Text style={this.styles.right}>J</Text>
+              <Text style={this.styles.right}>K</Text>
+              <Text style={this.styles.right}>L</Text>
+              <Text style={this.styles.right}>M</Text>
+              <Text style={this.styles.right}>N</Text>
+              <Text style={this.styles.right}>O</Text>
+              <Text style={this.styles.right}>P</Text>
+              <Text style={this.styles.right}>Q</Text>
+              <Text style={this.styles.right}>R</Text>
+              <Text style={this.styles.right}>S</Text>
+              <Text style={this.styles.right}>T</Text>
+              <Text style={this.styles.right}>U</Text>
+              <Text style={this.styles.right}>V</Text>
+              <Text style={this.styles.right}>W</Text>
+              <Text style={this.styles.right}>X</Text>
+              <Text style={this.styles.right}>Y</Text>
+              <Text style={this.styles.right}>Z</Text>
+            </View>
+            <SectionList style={{flex:1}}
               renderItem={({item}) => <AddressCell name={item.name} other={item.other}/>}
               renderSectionHeader={({section}) => section.nohead?null:<ListHead a={section.key}/>}
               sections={[ // 不同section渲染相同类型的子组件
@@ -61,6 +92,7 @@ class AddressList extends Component {
                 {data: [{name:"z", key: 'Z'}], key: 'Z'}
               ]}
             />
+            </View>
          );
    }
 }

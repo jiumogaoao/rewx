@@ -13,6 +13,7 @@ import Icon from 'react-native-vector-icons-iconfont/IconFont';
 import Face from '../svg/Face';
 import {AudioRecorder, AudioUtils} from 'react-native-audio';
 import Sound from 'react-native-sound';
+import BlackPoint from '../modules/BlackPoint';
 var ImagePicker = require('react-native-image-picker');
 var audioPath=AudioUtils.DocumentDirectoryPath + '/test.aac';
 class ToolCell extends Component {
@@ -73,7 +74,9 @@ class TalkFoot extends Component {
         state: 0 ,//0:默认,1:表情,2:其他功能,3:语音
         sound: false,
         audioPath:AudioUtils.DocumentDirectoryPath + '/a.aac',
-        text:''
+        text:'',
+        toolScroll:0,
+        faceScroll:0
       };
      }
    renderScrollItem(list) {
@@ -139,14 +142,20 @@ class TalkFoot extends Component {
                           }    
                         });
    }
+   toolScroll(){
+    this.setState({toolScroll:this.state.toolScroll==0?1:0});
+   }
+   faceScroll(){
+    this.setState({faceScroll:this.state.faceScroll==0?1:0});
+   }
    render() {
       return (
             <View style={{height : (this.state.state==0||this.state.state==3)?parseInt(96*w):parseInt(525*w),flexDirection:'column',borderTopColor:'#d9d9db',borderTopWidth:1,backgroundColor:'#f5f5f7'}}>
               <View style={{height:parseInt(96*w),flexDirection:'row',justifyContent : 'space-between'}}>
                 {
-                  this.state.state==3?(<TouchableOpacity onPress={() => this.setState({state: 0 })}>
+                  this.state.state==3?(<TouchableOpacity onPress={() => this.setState({state: 0,toolScroll:0,faceScroll:0 })}>
                   <Icon name="jianpan" style={{fontSize:parseInt(40*w),lineHeight:parseInt(43*w),textAlign:'center',width:parseInt(55*w),height:parseInt(55*w),borderColor:'#8a8b8f',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginTop:parseInt(21*w),color:'#8a8b8f'}}/>
-                </TouchableOpacity>):(<TouchableOpacity onPress={() => this.setState({state: 3 })}>
+                </TouchableOpacity>):(<TouchableOpacity onPress={() => this.setState({state: 3 ,toolScroll:0,faceScroll:0})}>
                   <Icon name="yuying" style={{fontSize:parseInt(40*w),lineHeight:parseInt(43*w),textAlign:'center',width:parseInt(55*w),height:parseInt(55*w),borderColor:'#8a8b8f',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginTop:parseInt(21*w),color:'#8a8b8f'}}/>
                 </TouchableOpacity>)
                 }
@@ -161,28 +170,27 @@ class TalkFoot extends Component {
                   style={{height: parseInt(70*w),flex:1,backgroundColor:'#fff',marginLeft:parseInt(10*w),marginTop:parseInt(12*w),borderWidth:1,borderColor:'#e3e3e5',borderRadius:parseInt(5*w)}} underlineColorAndroid='transparent' 
                  />)
                 }
-                <TouchableOpacity onPress={() => this.setState({state: 1 })}>
+                <TouchableOpacity onPress={() => this.setState({state: 1 ,toolScroll:0,faceScroll:0})}>
                   <Icon name="biaoqing" style={{fontSize:parseInt(40*w),lineHeight:parseInt(43*w),textAlign:'center',width:parseInt(55*w),height:parseInt(55*w),borderColor:'#8a8b8f',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginTop:parseInt(21*w),color:'#8a8b8f'}}/>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({state: 2 })}>
+                <TouchableOpacity onPress={() => this.setState({state: 2 ,toolScroll:0,faceScroll:0})}>
                   <Icon name="jia" style={{fontSize:parseInt(40*w),lineHeight:parseInt(37*w),textAlign:'center',width:parseInt(55*w),height:parseInt(55*w),borderColor:'#8a8b8f',borderWidth:1,borderRadius:parseInt(50*w),marginLeft:parseInt(10*w),marginRight:parseInt(10*w),marginTop:parseInt(21*w),color:'#8a8b8f'}}/>
                 </TouchableOpacity>
               </View>
               {this.state.state==2?(
                 <View style={{flex:1,flexDirection:'column'}}>
+                <View style={{position:'absolute',bottom:parseInt(10*w),left:parseInt(10*w),width:'100%'}}><BlackPoint count={2} hl={this.state.toolScroll}/></View>
                 <ScrollView
           //水平方向  
-       horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
+       horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false} onScrollEndDrag={()=>this.toolScroll()}> 
                   <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row',flexWrap:'wrap'}}>
                     {this.renderScrollItem([
                       {icon:'xiangche',name:'相册',key:'a',c:()=>{
                         this.getPic(0)
                       },d:()=>{}},
-                      {icon:'paise',name:'拍摄',key:'aa',c:()=>{
-                        this.getPic(1)
-                      },d:()=>{}},
+                      {icon:'paise',name:'拍摄',key:'aa',c:()=>this.props.navigation.navigate('Picture', {callback: (data)=>{this.props.addData({name:"a", key: 'id_'+(new Date().getTime()),from:1,img:data,width:w*720,height:h*720})}}),d:()=>{}},
                       {icon:'shiping',name:'视频聊天',key:'aaa',c:()=>{},d:()=>{}},
-                      {icon:'weizhi',name:'位置',key:'aaaa',c:this.props.place,d:()=>{}},
+                      {icon:'weizhi',name:'位置',key:'aaaa',c:()=>this.props.navigation.navigate('MapV', {callback: (data)=>{this.props.addData({name:"a", key: 'id_'+(new Date().getTime()),from:1,mapData:data})}}),d:()=>{}},
                       {icon:'hongbao',name:'红包',key:'aaaaa',c:()=>{},d:()=>{}},
                       {icon:'zhuanzhang',name:'转账',key:'aaaaaa',c:()=>{},d:()=>{}},
                       {icon:'wo2',name:'个人名片',key:'aaaaaaa',c:()=>{},d:()=>{}},
@@ -198,9 +206,10 @@ class TalkFoot extends Component {
                 ):null}
               {this.state.state==1?(
   <View style={{flex:1,flexDirection:'column'}}>
+  <View style={{position:'absolute',bottom:parseInt(10*w),left:parseInt(10*w),width:'100%'}}><BlackPoint count={2} hl={this.state.faceScroll}/></View>
                   <ScrollView
             //水平方向  
-         horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}> 
+         horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false} onScrollEndDrag={()=>this.faceScroll()}> 
                     <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row',flexWrap:'wrap'}}>
                       {
                         this.draw(0,19)

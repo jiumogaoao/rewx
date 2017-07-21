@@ -4,20 +4,33 @@ import {
    Dimensions,
   StyleSheet,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   Vibration
 } from 'react-native';
 import Camera from 'react-native-camera';
-
+import Icon from 'react-native-vector-icons-iconfont/IconFont';
 class Picture extends React.Component {
 
    constructor(props) {
         super(props);
         this.camera = null;
         this.state = {
-
+            front:false,
+            light:false
         }
-        this.transCode='';
+        this.styles=StyleSheet.create({
+          point:{
+            width:parseInt(100*w),
+            height:parseInt(100*w),
+            borderRadius:parseInt(100*w),
+            backgroundColor:'#fff'
+          },
+          icon:{
+            fontSize:parseInt(60*w),
+            lineHeight:parseInt(70*w),
+            textAlign:'center'
+          }
+        })
     }
 
 
@@ -29,27 +42,22 @@ class Picture extends React.Component {
           ref={(cam) => {
             this.camera = cam;
           }}
-          style={styles.preview}
+          style={styles.preview} type={this.state.front?'front':'back'} torchMode={this.state.light?Camera.constants.TorchMode.on:Camera.constants.TorchMode.off}
           aspect={Camera.constants.Aspect.fill}>
-          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+          <View style={{flexDirection:'row',justifyContent:'space-around',width:'100%',marginBottom:parseInt(100*w)}}>
+            <View style={this.styles.point}><TouchableOpacity  onPressIn={()=>{this.setState({light:!this.state.light})}}><Icon name="shoudian" style={this.styles.icon}/></TouchableOpacity></View>
+            <View style={this.styles.point}><TouchableOpacity  onPressIn={this.takePicture.bind(this)}><Icon name="paise" style={this.styles.icon}/></TouchableOpacity></View>
+            <View style={this.styles.point}><TouchableOpacity  onPressIn={()=>{this.setState({front:!this.state.front})}}><Icon name="qianzhi" style={this.styles.icon}/></TouchableOpacity></View>
+          </View>
         </Camera>
       </View>
       );
    }
-   barcodeReceived(e) {
-
-        if (e.data !== this.transCode) {
-            Vibration.vibrate([0, 500, 200, 500]);
-            this.transCode = e.data; // 放在this上，防止触发多次，setstate有延时
-            this.props.navigation.state.params.callback(e.data)
-            this.props.navigation.goBack();
-        }
-    }
    takePicture() {
     const options = {};
     //options.location = ... 
     this.camera.capture({metadata: options})
-      .then((data) => console.log(data))
+      .then((data) => {console.log(data);this.props.navigation.state.params.callback(data.mediaUri);this.props.navigation.goBack();})
       .catch(err => console.error(err));
   }
 }

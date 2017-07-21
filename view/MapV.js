@@ -6,10 +6,11 @@ import {
    View,
    StyleSheet,
    Dimensions,
-   StatusBar
+   StatusBar,
+   TouchableOpacity
 } from 'react-native';
 import { MapView, MapTypes, MapModule, Geolocation } from 'react-native-baidu-map'
-
+import Icon from 'react-native-vector-icons-iconfont/IconFont';
 class MapV extends React.Component {
 
    constructor() {
@@ -34,55 +35,50 @@ class MapV extends React.Component {
         title: ""
       }]
     };
+
+    this.styles = StyleSheet.create({
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    position:'absolute',
+    bottom:parseInt(50*w),
+    left:0,
+    width:'100%'
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  map: {
+  	width:'100%',
+    flex:1
+  },
+  point:{
+            width:parseInt(100*w),
+            height:parseInt(100*w),
+            borderRadius:parseInt(100*w),
+            backgroundColor:'#fff'
+          },
+  icon:{
+            fontSize:parseInt(40*w),
+            lineHeight:parseInt(60*w),
+            height:parseInt(70*w),
+            textAlign:'center'
+          }
+});
   }
 
   componentDidMount() {
-  }
-
-   render() {
-      return (
-         <View style={styles.container}>
-         <StatusBar backgroundColor="#000"/>
-        <MapView 
-          trafficEnabled={this.state.trafficEnabled}
-          baiduHeatMapEnabled={this.state.baiduHeatMapEnabled}
-          zoom={this.state.zoom}
-          mapType={this.state.mapType}
-          center={this.state.center}
-          marker={this.state.marker}
-          markers={this.state.markers}
-          style={styles.map}
-          onMarkerClick={(e) => {
-            console.warn(JSON.stringify(e));
-          }}
-          onMapClick={(e) => {
-          }}
-        >
-        </MapView>
-
-        <View style={styles.row}>
-          <Button title="Normal" onPress={() => {
-            this.setState({
-              mapType: MapTypes.NORMAL
-            });
-          }} />
-          <Button style={styles.btn} title="Satellite" onPress={() => {
-            this.setState({
-              mapType: MapTypes.SATELLITE
-            });
-          }} />
-
-          <Button style={styles.btn} title="Locate" onPress={() => {
-            console.warn('center', this.state.center);
-            Geolocation.getCurrentPosition()
+  	Geolocation.getCurrentPosition()
               .then(data => {
-                console.warn(JSON.stringify(data));
                 this.setState({
                   zoom: 15,
                   marker: {
                     latitude: data.latitude,
                     longitude: data.longitude,
-                    title: 'Your location'
+                    title: '你所在的位置'
                   },
                   center: {
                     latitude: data.latitude,
@@ -94,59 +90,43 @@ class MapV extends React.Component {
               .catch(e =>{
                 console.warn(e, 'error');
               })
-          }} />
+  }
+
+   render() {
+      return (
+         <View style={this.styles.container}>
+         <StatusBar backgroundColor="#000"/>
+        <MapView 
+          trafficEnabled={this.state.trafficEnabled}
+          baiduHeatMapEnabled={this.state.baiduHeatMapEnabled}
+          zoom={this.state.zoom}
+          mapType={this.state.mapType}
+          center={this.state.center}
+          marker={this.state.marker}
+          style={this.styles.map}
+          onMarkerClick={(e) => {
+          }}
+          onMapClick={(e) => {
+          	this.setState({marker:{latitude: e.latitude,
+                    longitude: e.longitude,
+                    title: '你所在的位置'}})
+          }}
+          onMapStatusChange={(e) => {
+          	this.state.center={latitude:e.target.latitude,longitude:e.target.longitude};
+          }}
+        >
+        </MapView>
+
+        <View style={this.styles.row}>
+        	<View style={this.styles.point}><TouchableOpacity  onPressIn={()=>{this.props.navigation.state.params.callback({marker:this.state.marker,center:this.state.center});
+            this.props.navigation.goBack();}}><Icon name="tianjia" style={this.styles.icon}/></TouchableOpacity></View>
         </View>
 
-        <View style={styles.row}>
-          <Button title="Zoom+" onPress={() => {
-            this.setState({
-              zoom: this.state.zoom + 1
-            });
-          }} />
-          <Button title="Zoom-" onPress={() => {
-            if(this.state.zoom > 0) {
-              this.setState({
-                zoom: this.state.zoom - 1
-              });
-            }
-            
-          }} />
-        </View>
 
-        <View style={styles.row}>
-          <Button title="Traffic" onPress={() => {
-            this.setState({
-              trafficEnabled: !this.state.trafficEnabled
-            });
-          }} />
-
-          <Button title="Baidu HeatMap" onPress={() => {
-            this.setState({
-              baiduHeatMapEnabled: !this.state.baiduHeatMapEnabled
-            });
-          }} />
-        </View>
       </View>
       );
    }
 }
 
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    height: 40
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  map: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height - 200,
-    marginBottom: 16
-  }
-});
 
 export default MapV;

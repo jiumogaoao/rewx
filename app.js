@@ -22,6 +22,7 @@ import Wallet from './view/Wallet';
 import Qrcode from './view/Qrcode';
 import Picture from './view/Picture';
 global.w = Dimensions.get('window').width/720;
+global.h = Dimensions.get('window').height/720;
 var navoption={
     headerTintColor: '#fff',headerStyle:{backgroundColor:"#000"},headerTitleStyle:{fontSize:parseInt(33*w)}
   }
