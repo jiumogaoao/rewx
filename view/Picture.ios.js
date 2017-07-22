@@ -42,6 +42,7 @@ class Picture extends React.Component {
           ref={(cam) => {
             this.camera = cam;
           }}
+          captureTarget={Camera.constants.CaptureTarget.disk}
           style={styles.preview} type={this.state.front?'front':'back'} torchMode={this.state.light?Camera.constants.TorchMode.on:Camera.constants.TorchMode.off}
           aspect={Camera.constants.Aspect.fill}>
           <View style={{flexDirection:'row',justifyContent:'space-around',width:'100%',marginBottom:parseInt(100*w)}}>
@@ -57,7 +58,11 @@ class Picture extends React.Component {
     const options = {};
     //options.location = ... 
     this.camera.capture({metadata: options})
-      .then((data) => {console.log(data);this.props.navigation.state.params.callback(data.mediaUri);this.props.navigation.goBack();})
+      .then((data) => {
+        console.warn(JSON.stringify(data));
+        this.props.navigation.state.params.callback(data.path);
+        this.props.navigation.goBack();
+      })
       .catch(err => console.error(err));
   }
 }
