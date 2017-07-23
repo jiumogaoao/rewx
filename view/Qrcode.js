@@ -50,8 +50,7 @@ class Qrcode extends React.Component {
         if (e.data !== this.transCode) {
             Vibration.vibrate([0, 500, 200, 500]);
             this.transCode = e.data; // 放在this上，防止触发多次，setstate有延时
-            this.props.navigation.state.params.callback(e.data)
-            this.props.navigation.goBack();
+            this.props.navigation.navigate('Detail', {name: e.data,type:0})
         }
     }
 }

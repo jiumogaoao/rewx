@@ -39,7 +39,7 @@ class Mine extends Component {
      renderItem={({item}) => <Cell deg={true}  name={item.name} other={item.other} go={item.go}/>}
      renderSectionHeader={({section}) => <ListHead a=" "/>}
      sections={[ // 不同section渲染相同类型的子组件
-       {data: [{name:"某人", key: 'A',dsc:'微信号：jiumogaoao',img:'http://#'}], key: 'A',renderItem:({item})=><PeopleCell name={item.name} dsc={item.dsc} img={item.img}/>},
+       {data: [{name:"某人", key: 'A',dsc:'微信号：jiumogaoao',img:'https://facebook.github.io/react/img/logo_og.png'}], key: 'A',renderItem:({item})=><PeopleCell name={item.name} dsc={item.dsc} img={item.img}/>},
      {data: [{name:"钱包", key: 'B',dsc:'bb',other:(<Icon name="qianbao" style={[this.styles.icon,{color:"#0faeff"}]}/>),go:()=>this.props.navigation.navigate('Password',{})}], key: 'B'},
      {data: [
       {name:"收藏", key: 'C',dsc:'cc',other:(<View style={this.styles.svg}><ShouCang s={0.035}/></View>)},

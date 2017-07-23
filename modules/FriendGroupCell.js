@@ -3,7 +3,7 @@ import {
    Text,
    View,
    StyleSheet,
-   TouchableHighlight,
+   TouchableOpacity,
    Image
 } from 'react-native';
 
@@ -32,6 +32,12 @@ class FriendGroupCell extends Component {
             color:'#56607b'
           }
       })
+      this.state={
+        comment:false,
+        praise:this.props.data.praise&&this.props.data.praise.some((x)=>{return x.id=='b'})?true:false,
+        data:this.props.data,
+        time:new Date().getTime()
+      }
     }
    picRender(data){
     const itemArr = [];
@@ -112,6 +118,19 @@ class FriendGroupCell extends Component {
                   return itemArr;
                 }
    }
+   addPraise(){
+    if(this.state.praise){
+      this.state.data.praise=this.state.data.praise.filter((x)=>{return x.id!='b'})
+      this.state.praise=false
+    }else{
+      if(!this.state.data.praise){
+        this.state.data.praise=[]
+      }
+        this.state.data.praise.push({name:'a',id:'b'})
+        this.state.praise=true
+    }
+    this.setState(this.state)
+   }
    render() {
       var data=this.props.data;
       return (
@@ -125,13 +144,31 @@ class FriendGroupCell extends Component {
                 {this.picRender(this.props.data)}
                 </View>
                 {this.props.data.place?(<Text style={{fontSize:parseInt(22*w),color:'#6a70a4'}}>{this.props.data.place}</Text>):null}
-                <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:parseInt(18*w)}}>
-                  <Text style={{fontSize:parseInt(22*w)}}>{this.props.data.time}</Text>
-                  <Icon name="pinglun" style={{fontSize:parseInt(22*w),lineHeight:parseInt(24*w),color:'#94aad1',marginRight:parseInt(25*w)}}/>
+                <View>
+                  <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:parseInt(24*w)}}>
+                    <Text style={{fontSize:parseInt(22*w)}}>{this.props.data.time}</Text>
+                    <TouchableOpacity onPressIn={()=>{this.setState({comment:!this.state.comment})}}>
+                    <Icon name="pinglun" style={{fontSize:parseInt(22*w),lineHeight:parseInt(24*w),color:'#94aad1',marginRight:parseInt(25*w)}}/>
+                    </TouchableOpacity>  
+                  </View>
+                  
+                  {
+                    this.drawCommentFrame(this.state.data)
+                }
+                {this.state.comment?(<View style={{width:parseInt(345*w),height:parseInt(76*w),borderRadius:parseInt(5*w),backgroundColor:'#4d5154',position:'absolute',top:parseInt(0*w),right:parseInt(60*w),zIndex:10,flexDirection:'row'}}>
+                  <TouchableOpacity onPressIn={()=>{this.addPraise()}} style={{width:'50%'}}><View style={{flexDirection:'row',justifyContent:'center'}}><Icon name="zan" style={{color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(52*w)}}/><Text style={{color:'#fff',fontSize:parseInt(35*w),lineHeight:parseInt(60*w),marginLeft:parseInt(10*w)}}>赞</Text></View></TouchableOpacity>
+                  <TouchableOpacity onPressIn={
+                    ()=>{
+                      this.props.addComment(
+                      this.props.data.key,
+                      ()=>{this.setState({time:new Date().getTime()})}
+                    )
+                  }
+                } style={{width:'50%'}}><View style={{flexDirection:'row',justifyContent:'center'}}><Icon name="pinglun2" style={{color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(52*w)}}/><Text style={{color:'#fff',fontSize:parseInt(35*w),lineHeight:parseInt(60*w),marginLeft:parseInt(10*w)}}>评论</Text></View></TouchableOpacity>
+                </View>):null}
+                
                 </View>
-                {
-                  this.drawCommentFrame(this.props.data)
-              }
+                
               </View>
             </View>
          );

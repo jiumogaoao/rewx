@@ -191,14 +191,14 @@ class TalkFoot extends Component {
                       {icon:'paise',name:'拍摄',key:'aa',c:()=>this.props.navigation.navigate('Picture', {callback: (data)=>{this.props.addData({name:"a", key: 'id_'+(new Date().getTime()),from:1,img:data,width:w*720,height:h*720})}}),d:()=>{}},
                       {icon:'shiping',name:'视频聊天',key:'aaa',c:()=>{},d:()=>{}},
                       {icon:'weizhi',name:'位置',key:'aaaa',c:()=>this.props.navigation.navigate('MapV', {callback: (data)=>{this.props.addData({name:"a", key: 'id_'+(new Date().getTime()),from:1,mapData:data})}}),d:()=>{}},
-                      {icon:'hongbao',name:'红包',key:'aaaaa',c:()=>{},d:()=>{}},
-                      {icon:'zhuanzhang',name:'转账',key:'aaaaaa',c:()=>{},d:()=>{}},
-                      {icon:'wo2',name:'个人名片',key:'aaaaaaa',c:()=>{},d:()=>{}},
+                      {icon:'hongbao',name:'红包',key:'aaaaa',c:()=>this.props.navigation.navigate('RedPackage', {callback: (data)=>{}}),d:()=>{}},
+                      {icon:'zhuanzhang',name:'转账',key:'aaaaaa',c:()=>this.props.navigation.navigate('Costs', {callback: (data)=>{}}),d:()=>{}},
+                      {icon:'wo2',name:'个人名片',key:'aaaaaaa',c:()=>this.props.navigation.navigate('AddressList', {callback: (data)=>{}}),d:()=>{}},
                       {icon:'yuying',name:'语音输入',key:'aaaaaaaa',c:()=>{this.startSound()},d:()=>{this.stopSound()}}])}
                   </View>
                   <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row'}}>
                     {this.renderScrollItem([
-                      {icon:'shoucang',name:'收藏',key:'aaaaaaaaa',c:()=>{},d:()=>{}},
+                      {icon:'shoucang',name:'收藏',key:'aaaaaaaaa',c:()=>this.props.navigation.navigate('Collection', {callback: (data)=>{}}),d:()=>{}},
                       {icon:'kaquan',name:'卡券',key:'aaaaaaaaaa',c:()=>{},d:()=>{}}])}
                   </View>
                 </ScrollView>

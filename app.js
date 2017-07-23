@@ -21,6 +21,11 @@ import Password from './view/Password';
 import Wallet from './view/Wallet';
 import Qrcode from './view/Qrcode';
 import Picture from './view/Picture';
+import AddZone from './view/AddZone';
+import Detail from './view/Detail';
+import RedPackage from './view/RedPackage';
+import Costs from './view/Costs';
+import Collection from './view/Collection';
 global.w = Dimensions.get('window').width/720;
 global.h = Dimensions.get('window').height/720;
 var navoption={
@@ -36,7 +41,13 @@ const rewx = StackNavigator({
    Password:{screen:Password,navigationOptions: navoption},
    Wallet:{screen:Wallet,navigationOptions: navoption},
    Qrcode:{screen:Qrcode,navigationOptions: navoption},
-   Picture:{screen:Picture,navigationOptions: navoption}
+   Picture:{screen:Picture,navigationOptions: navoption},
+   AddZone:{screen:AddZone,navigationOptions: navoption},
+   Detail:{screen:Detail,navigationOptions: navoption},
+   RedPackage:{screen:RedPackage,navigationOptions: navoption},
+   Costs:{screen:Costs,navigationOptions: navoption},
+   AddressList:{screen:AddressList,navigationOptions: navoption},
+   Collection:{screen:Collection,navigationOptions: navoption}
 });
 
 AppRegistry.registerComponent('rewx', () => rewx);
