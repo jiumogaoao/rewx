@@ -27,8 +27,9 @@ class Picture extends React.Component {
           },
           icon:{
             fontSize:parseInt(60*w),
-            lineHeight:parseInt(70*w),
-            textAlign:'center'
+            lineHeight:parseInt(85*w),
+            textAlign:'center',
+            backgroundColor:'transparent'
           }
         })
     }

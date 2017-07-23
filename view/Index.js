@@ -31,13 +31,13 @@ class Index extends React.Component {
           <TouchableOpacity onPress={()=>{
             d.setState({weiXingPop:!d.state.weiXingPop})
           }}>
-            <Icon name="jia" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(40*w)}}/>
+            <Icon name="jia" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(80*w)}}/>
           </TouchableOpacity>
          )
       }else if(navigation.state.params.page==1){
         rbutton=(
           <TouchableOpacity>
-            <Icon name="jiahaoyou" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(40*w)}}/>
+            <Icon name="jiahaoyou" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(80*w)}}/>
           </TouchableOpacity>  
          )
       }

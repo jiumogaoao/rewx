@@ -123,7 +123,7 @@ class AddZone extends React.Component {
                navigation.state.params.callback({pic:pic,dsc:dsc})
               navigation.goBack();
             }}>
-            <Text style={{color:'#23de09',fontSize:parseInt(35*w),top:0,right:parseInt(0*w),width:parseInt(100*w)}}>发送</Text>
+            <Text style={{color:'#23de09',fontSize:parseInt(35*w),top:0,right:parseInt(30*w),width:parseInt(100*w)}}>发送</Text>
           </TouchableOpacity>
          ),
       };

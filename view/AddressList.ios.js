@@ -16,9 +16,12 @@ class AddressList extends Component {
     super(props);
     this.styles = StyleSheet.create({
   icon:{
-    width:parseInt(68*w),height:parseInt(68*w),marginLeft:parseInt(10*w),marginTop:parseInt(18*w),color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(48*w),textAlign:'center'
+    color:'#fff',fontSize:parseInt(40*w),lineHeight:parseInt(48*w),textAlign:'center',marginTop:parseInt(8*w)
   },
-  right:{textAlign:'center',fontSize:parseInt(20*w)}
+  iconFrame:{
+    width:parseInt(68*w),height:parseInt(68*w),marginLeft:parseInt(10*w),marginTop:parseInt(18*w)
+  },
+  right:{textAlign:'center',fontSize:parseInt(20*w),backgroundColor:'transparent'}
 })
   }
    render() {
@@ -59,10 +62,10 @@ class AddressList extends Component {
               renderSectionHeader={({section}) => section.nohead?null:<ListHead a={section.key}/>}
               sections={[ // 不同section渲染相同类型的子组件
                 {data: [
-                  {name:"新的朋友", key: 'A',other:(<Icon name="xinpengyou" style={[this.styles.icon,{backgroundColor:'#f59f48'}]}/>)},
-                  {name:"群聊", key: 'Ab',other:(<Icon name="qunliao" style={[this.styles.icon,{backgroundColor:'#1aac1b'}]}/>)},
-                  {name:"标签", key: 'Ac',other:(<Icon name="biaoqian" style={[this.styles.icon,{backgroundColor:'#1c84e5'}]}/>)},
-                  {name:"公众号", key: 'Ae',other:(<Icon name="gongzonghao" style={[this.styles.icon,{backgroundColor:'#2880d7'}]}/>)}
+                  {name:"新的朋友", key: 'A',other:(<View style={[this.styles.iconFrame,{backgroundColor:'#f59f48'}]}><Icon name="xinpengyou" style={this.styles.icon}/></View>)},
+                  {name:"群聊", key: 'Ab',other:(<View style={[this.styles.iconFrame,{backgroundColor:'#1aac1b'}]}><Icon name="qunliao" style={this.styles.icon}/></View>)},
+                  {name:"标签", key: 'Ac',other:(<View style={[this.styles.iconFrame,{backgroundColor:'#1c84e5'}]}><Icon name="biaoqian" style={this.styles.icon}/></View>)},
+                  {name:"公众号", key: 'Ae',other:(<View style={[this.styles.iconFrame,{backgroundColor:'#2880d7'}]}><Icon name="gongzonghao" style={this.styles.icon}/></View>)}
                   ], key: 'A0',nohead:true},
                 {data: [{name:"a", key: 'A',p:()=>{this.props.navigation.navigate('Detail', {name: 'a',type:1})}}], key: 'A'},
                 {data: [{name:"b", key: 'B',p:()=>{this.props.navigation.navigate('Detail', {name: 'b',type:1})}}], key: 'B'},

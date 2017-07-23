@@ -50,7 +50,7 @@ class Talk extends React.Component {
          title: data,
          headerRight: (
             <TouchableOpacity onPress={()=>{}}>
-            <Icon name="wo2" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(40*w)}}/>
+            <Icon name="wo2" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(80*w)}}/>
           </TouchableOpacity>
          )
 

@@ -71,7 +71,7 @@ class Zone extends React.Component {
             <TouchableOpacity onPress={()=>{
                z.addZone();
             }}>
-            <Icon name="paise" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(40*w)}}/>
+            <Icon name="paise" style={{color:'#fff',fontSize:parseInt(35*w),top:-parseInt(30*w),right:parseInt(0*w),width:parseInt(80*w)}}/>
           </TouchableOpacity>
          ),
       };
@@ -127,7 +127,7 @@ class Zone extends React.Component {
          <StatusBar backgroundColor="#000"/>
             <FlatList
                   data={this.state.data}
-                  renderItem={({item}) => {return item.key=='head'?(<View style={{paddingBottom:parseInt(100*w)}}><Image source={{uri:item.pic}} style={{width: parseInt(720*w), height: parseInt(492*w)}}/><View style={{position: 'absolute',top:parseInt(415*w),left:parseInt(420*w),zIndex:3}}><Text style={{color:'#fff',fontSize:30}}>{item.name}</Text></View><View style={{position: 'absolute',top:parseInt(392*w),left:parseInt(558*w),zIndex:3,borderWidth:2,borderColor:'#fff'}}><Image source={{uri:item.head}} style={{width: parseInt(137*w), height: parseInt(137*w)}}/></View></View>):(<FriendGroupCell data={item} addComment={(id,callback)=>{this.setState({comment:true,
+                  renderItem={({item}) => {return item.key=='head'?(<View style={{paddingBottom:parseInt(100*w)}}><Image source={{uri:item.pic}} style={{width: parseInt(720*w), height: parseInt(492*w)}}/><View style={{position: 'absolute',top:parseInt(415*w),left:parseInt(420*w),zIndex:3,backgroundColor:'transparent'}}><Text style={{color:'#fff',fontSize:30}}>{item.name}</Text></View><View style={{position: 'absolute',top:parseInt(392*w),left:parseInt(558*w),zIndex:3,borderWidth:2,borderColor:'#fff'}}><Image source={{uri:item.head}} style={{width: parseInt(137*w), height: parseInt(137*w)}}/></View></View>):(<FriendGroupCell data={item} addComment={(id,callback)=>{this.setState({comment:true,
       commentId:id,commentCallback:callback})}}/>)}}
                 />
             {this.state.comment?(<View style={{height:parseInt(86*w),width:'100%',backgroundColor:'#fafafa',borderTopwidth:1,borderTopColor:'#c4c4c4',position:'absolute',left:0,bottom:0,flexDirection:'row'}}>

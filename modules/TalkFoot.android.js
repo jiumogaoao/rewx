@@ -20,7 +20,7 @@ class ToolCell extends Component {
   render(){
     
     return (
-      <TouchableOpacity onPressIn={this.props.passIn}  onPressOut={this.props.passOut} style={{width:'25%',height:parseInt(187*w)}}>
+      <TouchableOpacity onPress={this.props.passIn}  onPressOut={this.props.passOut} style={{width:'25%',height:parseInt(187*w)}}>
         <View style={{flex:1,top:parseInt(20*w)}}>
           <Icon name={this.props.icon} style={{width:parseInt(115*w),height:parseInt(115*w),backgroundColor:'#fff',marginLeft:parseInt(34*w),textAlign:'center',fontSize:parseInt(50*w),lineHeight:parseInt(75*w),marginBottom:parseInt(10*w),borderRadius:parseInt(20*w),borderColor:'#dedee0',borderWidth:1,color:'#6f7277'}}></Icon>
           <Text style={{textAlign:'center',marginBottom:parseInt(10*w),fontSize:parseInt(22*w),marginTop:parseInt(10*w)}}>{this.props.name}</Text>
@@ -42,7 +42,7 @@ class FaceCell extends Component {
   render(){
     
     return (
-      <TouchableOpacity onPressIn={() => {this.props.c({name:"a", key: 'id_'+(new Date().getTime()),from:1,face:this.props.n})}} style={[this.styles.svg,{width:parseInt(45*w),height:parseInt(45*w)}]}>
+      <TouchableOpacity onPress={() => {this.props.c({name:"a", key: 'id_'+(new Date().getTime()),from:1,face:this.props.n})}} style={[this.styles.svg,{width:parseInt(45*w),height:parseInt(45*w)}]}>
                             <View style={{flex:1}}>
                               <Face s={0.23} num={this.props.n}/>
                             </View>
@@ -194,7 +194,7 @@ class TalkFoot extends Component {
                       {icon:'hongbao',name:'红包',key:'aaaaa',c:()=>this.props.navigation.navigate('RedPackage', {callback: (data)=>{}}),d:()=>{}},
                       {icon:'zhuanzhang',name:'转账',key:'aaaaaa',c:()=>this.props.navigation.navigate('Costs', {callback: (data)=>{}}),d:()=>{}},
                       {icon:'wo2',name:'个人名片',key:'aaaaaaa',c:()=>this.props.navigation.navigate('AddressList', {callback: (data)=>{}}),d:()=>{}},
-                      {icon:'yuying',name:'语音输入',key:'aaaaaaaa',c:()=>{this.startSound()},d:()=>{this.stopSound()}}])}
+                      {icon:'yuying',name:'语音输入',key:'aaaaaaaa',c:()=>{},d:()=>{}}])}
                   </View>
                   <View style={{width:parseInt(720*w),height:parseInt(300*w),flexDirection:'row'}}>
                     {this.renderScrollItem([
