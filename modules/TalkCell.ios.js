@@ -46,7 +46,7 @@ class TalkCell extends Component {
                   }else if(p.face||p.face==0){
                     return (<View style={[{padding:parseInt(20*w)},p.from==1?{paddingLeft:parseInt(20*w),paddingRight:parseInt(28*w)}:{paddingLeft:parseInt(28*w),paddingRight:parseInt(20*w)}]}><Face s={0.25} num={p.face}/></View>)
                   }else if(p.sound){
-                    return (<TouchableOpacity onPressIn={()=>this.sound()}><View style={[{padding:parseInt(20*w),width:parseInt(this.state.time*30*w)},p.from==1?{paddingLeft:parseInt(20*w),paddingRight:parseInt(28*w)}:{paddingLeft:parseInt(28*w),paddingRight:parseInt(20*w)}]}><Icon name="yuying" style={{fontSize:parseInt(40*w),lineHeight:parseInt(35*w),height:parseInt(43*w)}}/></View></TouchableOpacity>)
+                    return (<TouchableOpacity onPressIn={()=>this.sound()}><View style={[{padding:parseInt(20*w),width:parseInt(this.state.time*30*w)},p.from==1?{paddingLeft:parseInt(20*w),paddingRight:parseInt(28*w)}:{paddingLeft:parseInt(28*w),paddingRight:parseInt(20*w)}]}><Icon name="yuying" style={{fontSize:parseInt(40*w),lineHeight:parseInt(45*w),height:parseInt(43*w)}}/></View></TouchableOpacity>)
                   }else if(p.mapData){
                     return (<MapView 
           zoom={15}

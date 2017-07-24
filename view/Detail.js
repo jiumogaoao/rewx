@@ -49,12 +49,13 @@ class Detail extends Component {
 	   {data: [{key:'C',name:'地区',dsc:'广东 深圳',deg:false},{key:'CC',name:'个人相册',dsc:'',pic:[{url:'https://facebook.github.io/react/img/logo_og.png'},{url:'https://facebook.github.io/react/img/logo_og.png'},{url:'https://facebook.github.io/react/img/logo_og.png'},{url:'https://facebook.github.io/react/img/logo_og.png'}],deg:true},{key:'CCC',name:'更多',deg:true}], key: 'C'}
    ]}
    />
-   {this.props.navigation.state.params.type==0?(<View style={{width:parseInt(643*w),height:parseInt(91*w),marginLeft:'auto',marginRight:'auto',marginTop:parseInt(20*w)}}>
-      <Button title='添加好友' color='#1aac19'/>
-    </View>):(<View style={{width:parseInt(643*w),height:parseInt(91*w),marginLeft:'auto',marginRight:'auto',marginTop:parseInt(20*w)}}>
-      <Button title='发送消息' color='#1aac19'/>
-    </View>)}
-    
+   <View style={{width:parseInt(643*w),height:parseInt(91*w),marginLeft:'auto',marginRight:'auto',marginTop:parseInt(20*w),backgroundColor:'#1aac19',borderRadius:parseInt(10*w)}}>
+   {this.props.navigation.state.params.type==0?(
+      <Text style={{color:'#fff',backgroundColor:'transparent',textAlign:'center',fontSize:parseInt(40*w),lineHeight:parseInt(80*w)}}>添加好友</Text>
+):(
+      <Text style={{color:'#fff',backgroundColor:'transparent',textAlign:'center',fontSize:parseInt(40*w),lineHeight:parseInt(80*w)}}>发送消息</Text>
+)}
+    </View>
     </View>
          );
    }
