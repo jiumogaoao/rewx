@@ -5,7 +5,9 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  Vibration
+  Vibration,
+  Animated,
+  Easing
 } from 'react-native';
 import Camera from 'react-native-camera';
 
@@ -15,12 +17,26 @@ class Qrcode extends React.Component {
         super(props);
         this.camera = null;
         this.state = {
-
+          fadeAnim: new Animated.Value(0)
         }
         this.transCode='';
     }
 
+    componentDidMount() {
+      this.animate()                                 // 开始执行动画
+    }
 
+    animate () {
+      this.state.fadeAnim.setValue(0)
+      Animated.timing(
+        this.state.fadeAnim,                      // 动画中的变量值
+        {
+          toValue: parseInt(600*w), 
+          duration: 2000 ,
+          easing: Easing.linear                        // 透明度最终变为1，即完全不透明
+        }
+      ).start(() => this.animate())
+    }
 
    render() {
       return (
@@ -35,9 +51,16 @@ class Qrcode extends React.Component {
                                     (e)=>this.barcodeReceived(e)
                                 }>
           <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',width:'100%'}}/>
-          <View style={{width:'100%',height:parseInt(400*w),flexDirection:'row'}}>
+          <View style={{width:'100%',height:parseInt(600*w),flexDirection:'row'}}>
               <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',height:'100%'}}/>
-              <View style={{width:parseInt(400*w),height:'100%'}}/>
+              <View style={{width:parseInt(600*w),height:'100%'}}>
+                <Animated.View style={{width:parseInt(600*w),height:1,backgroundColor:'green',position:'absolute',top:this.state.fadeAnim,left:0}}></Animated.View>
+                <View style={{width:parseInt(600*w),height:'100%',borderWidth:1,borderColor:'green'}}></View>
+                <View style={{width:parseInt(50*w),height:parseInt(50*w),borderTopWidth:5,borderTopColor:'green',borderLeftWidth:5,borderLeftColor:'green',position:'absolute',top:0,left:0}}></View>
+                <View style={{width:parseInt(50*w),height:parseInt(50*w),borderTopWidth:5,borderTopColor:'green',borderRightWidth:5,borderRightColor:'green',position:'absolute',top:0,right:0}}></View>
+                <View style={{width:parseInt(50*w),height:parseInt(50*w),borderLeftWidth:5,borderLeftColor:'green',borderBottomWidth:5,borderBottomColor:'green',position:'absolute',bottom:0,left:0}}></View>
+                <View style={{width:parseInt(50*w),height:parseInt(50*w),borderRightWidth:5,borderRightColor:'green',borderBottomWidth:5,borderBottomColor:'green',position:'absolute',bottom:0,right:0}}></View>
+              </View>
               <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',height:'100%'}}/>
           </View>
           <View style={{flex:1,backgroundColor:'rgba(0,0,0,0.5)',width:'100%'}}/>
